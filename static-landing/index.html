@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wenlo-todos</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- font thingy -- had to lean how to do this  -->
+
+    <link rel="preconnect" href="https://fonts.googleleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- floating pill navbar -- looks cool -->
+
+<nav class="pill-nav" aria-label="Main-nav">
+    <!-- settings icon  -->
+    <div class = "nav-icon">
+        <svg width='16' height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+
+            <!-- path was taken from a website -- i forgor -->
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+            </path>
+        </svg>
+    </div>
+
+    <a href="#features" class="nav-link">
+        Features
+    </a>
+    <a href="#roadmap" class="nav-link">
+        Roadmap
+    </a>
+
+    <!-- auth -->
+    <a href="/sign-in" class="nav-btn nav-btn-outline">
+        Sign In
+    </a>
+    <a href="/waitlist" class="nav-btn nav-btn-outline">
+        Join Waitlist
+    </a>
+
+</nav>
+
+<!-- Theme Toggle Bottom Left -->
+<div class="theme-toggle">
+   <button class="theme-btn active">Dark</button>
+   <button class="theme-btn inactive">Light</button>
+</div>
+
+<div class="scroll-hint">
+    Scroll to explore <div class="scroll-dot"></div>
+</div>
+
+<!-- <main class="scroll-hint">
+    Scroll
+</main> -->
+
+<main class="hero">
+
+    <div>
+        <h1 class="logo-large">WELNO<span class="copyright">@</span></h1>
+        <p class="subtitle">A task manager alternative for <span class=pill-highlight>teams that ship</span></p>
+    </div>
+
+
+    <!-- orbiting/floating thingy  -->
+
+    <div class="orbit-container">
+        <!-- g1 -->
+
+         <div class="float-card card-1">
+            <div class="card-header"><span class="dot red"></span>Design system</div>
+            <div class="card-line"></div><div class="card-line short"></div>
+         </div>
+
+         <div class="float-card card-2">
+            <div class="card-header"><span class="dot yellow"></span>API Specs</div>
+            <div class="card-line"></div>
+         </div>
+
+         <div class="float-card card-3">
+            <div class="card-header"><span class="dot green"></span>Launch prep</div>
+            <div class="card-line"></div><div class="card-line"></div>
+         </div>
+
+         <div class="float-card card-4 dark-card">
+            <div class="card-header">Weekly Sync</div>
+            <div class="card-date">Tomorrow, 10am</div>
+         </div>
+
+         <div class="float-card card-5">
+            <div class="card-header"><span class="dot blue"></span>Database schema</div>
+            <div class="card-line"></div>
+         </div>
+
+         <div class="float-card card-6 image-card">
+            <div class="img-placeholder"></div>
+         </div>
+
+
+        
+        
+        
+        
+        
+         <!-- g2 -->
+
+
+        <div class="float-card card-7 blur-card">
+            <div class="card-line"></div>
+        </div>
+
+        <div class="float-card card-8 blur-card">
+            <div class="card-line">Q3 Goals</div>
+        </div>
+
+        <div class="float-card card-9 blur-card">
+            <div class="card-line"></div><div class="card-line short"></div>
+        </div>
+
+        <div class="float-card card-10 blur-card">
+            <div class="img-placeholder"></div>
+        </div>
+
+        <div class="float-card card-11 blur-card">
+            <div class="card-header"></div>
+        </div>
+
+        <div class="float-card card-12 blur-card">
+            <div class="card-line"></div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</main>
+
+    
+</body>
+</html>
