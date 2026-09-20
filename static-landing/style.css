@@ -87,6 +87,38 @@ a{
 }
 
 /* theme toggle for now */
+.theme-toggle{
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 100;
+
+    display: flex;
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    border:1px solid var(--nav-border);
+    border-radius: 99px;
+    padding: 0.25rem;
+}
+
+.theme-btn{
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 99px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.theme-btn.active{
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
 
 /* scroll hint */
 .scroll-hint{
