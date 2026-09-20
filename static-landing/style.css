@@ -50,6 +50,7 @@ a{
 
 .pill-nav{
 
+
 }
 
 .nav-icon{
@@ -83,6 +84,30 @@ a{
 .nav-btn-solid:hover{
     background: #e5e5e5;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* theme toggle for now */
+
+/* scroll hint */
+.scroll-hint{
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+
+}
+
+.scroll-dot{
+    width: 32px;
+    height: 32px;
+    background: #fff;
+    border-radius: 8px;
+    opacity: 0.9;
 }
 
 /* center floating content */
