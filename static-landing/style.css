@@ -86,7 +86,33 @@ a{
 }
 
 /* center floating content */
+.main-shiiii {
 
+}
+
+.main-shiiii-center{
+
+}
+
+.logo-large{
+
+}
+
+.copyright{
+
+}
+
+.subtitle{
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    letter-spacing: -0.1em;
+
+}
+
+.pill-highlight{
+    
+
+}
 
 /* orbiting cards */
 .orbit-container{
@@ -197,9 +223,9 @@ a{
     100%{transform: translateY(0px) rotate(0deg);}
 }
 
-.card-1{ animation: floatAnimation}
-.card-2{ animation: floatAnimation}
-.card-3{ animation: floatAnimation}
-.card-4{ animation: floatAnimation}
-.card-5{ animation: floatAnimation}
-.card-6{ animation: floatAnimation}
+.card-1{ animation: floatAnimation 6s ease-in-out infinite;}
+.card-2{ animation: floatAnimation 8s ease-in-out infinite reverse;}
+.card-3{ animation: floatAnimation 7s ease-in-out infinite;}
+.card-4{ animation: floatAnimation 9s ease-in-out infinite reverse;}
+.card-5{ animation: floatAnimation 6.5s ease-in-out infinite;}
+.card-6{ animation: floatAnimation 7.5s ease-in-out infinite reverse;}
