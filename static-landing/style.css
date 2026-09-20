@@ -1,18 +1,52 @@
 :root{
+    --bg: #1F2937;
+    --text: #f5f1e6;
+    --text-muted: #64748B;
 
+    --nav-bg:rgba();
+    --nav-border: rgba();
+
+    --font: 'Manrope', system-ui, -apple-system, sans-serif;
 }
 
 *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
 }
+
+
+
+
 
 body{
+    font-family: var(--font);
+    background-color: var(--bg);
+    color: var(--text);
+
+    /* hiding the ugly scrollbars  */
+    overflow: hidden; 
+
+    -webkit-font-smoothing: antialised;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
 
 }
+
+
+/*links and shit */
 
 a{
+    text-decoration: none;
+    color:inherit;
 
 }
+
+
+/* navbar floating  */
+
 
 .pill-nav{
 
@@ -26,7 +60,7 @@ a{
 
 }
 
-.nav-link:hover{
+.nav-link: hover{
     color: var(--text);
 }
 
@@ -35,5 +69,59 @@ a{
 }
 
 .nav-btn-outline {
-    
+
 }
+
+.nav-btn-outline:hover{
+
+}
+
+.nav-btn-solid{
+
+}
+
+.nav-btn-solid:hover{
+    background: #e5e5e5;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* center floating content */
+
+/* orbiting cards */
+
+.blur-card{
+    filter: blur(4px);
+    opacity: 0.3;
+}
+
+/* positioning the circle arround the center */
+
+/* G1: in focous */
+.card-1{width: 140px; top: 15%; left:20%; transform: rotate(-15deg);}
+.card-2{width: 120px; top: 25%; left:70%; transform: rotate(-15deg);}
+.card-3{width: 150px; bottom: 20%; left:25%; transform: rotate(-15deg);}
+.card-4{width: 130px; bottom: 15%; right:25%; transform: rotate(-15deg);}
+.card-5{width: 140px; top: 40%; right:10%; transform: rotate(-15deg);}
+.card-6{top: 60%; left: 15%; transform: rotate(20deg);}
+
+/* G2: blured background layer */
+.card-7{width: 140px; top: 15%; left:20%; transform: rotate(-15deg);}
+.card-8{width: 140px; top: 15%; left:20%; transform: rotate(-15deg);}
+.card-9{width: 140px; top: 15%; left:20%; transform: rotate(-15deg);}
+.card-10{width: 140px; top: 15%; left:20%; transform: rotate(-15deg);}
+.card-11{width: 140px; top: 15%; left:20%; transform: rotate(-15deg);}
+.card-12{width: 140px; top: 15%; left:20%; transform: rotate(-15deg);}
+
+/* tiny subtle animation */
+@keyframes floatAnimations {
+    0%{transform: translateY(0px) rotate(0deg);}
+    50%{transform: translateY(-10px) rotate(2deg);}
+    100%{transform: translateY(0px) rotate(0deg);}
+}
+
+.card-1{ animation: floatAnimation}
+.card-2{ animation: floatAnimation}
+.card-3{ animation: floatAnimation}
+.card-4{ animation: floatAnimation}
+.card-5{ animation: floatAnimation}
+.card-6{ animation: floatAnimation}
