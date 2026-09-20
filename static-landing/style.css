@@ -89,12 +89,63 @@ a{
 
 
 /* orbiting cards */
+.orbit-container{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+}
 
+.folat-card{
+    position:absolute;
+    background: #1a1a1a;
+    border: 1px solid rgba(225, 255, 255, 0.08)
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+
+
+}
+
+/* sim of tasks/boards */
+.card-header{
+    font-size:0.75rem;
+    font-weight:600;
+    color: #ccc;
+    display:flex;
+    align-items:center;
+    gap:0.4rem;
+    margin-bottom: 0.5rem;
+
+}
+
+.dot{
+    width:6px;
+    height:6px;
+    border-radius: 50%;
+}
+
+.dot.red{background: #ff5f56;}
+.dot.yellow{background: #ffbd2e;}
+.dot.green{background: #27c93f;}
+.dot.blue{background: #3b82f6;}
 
 .blur-card{
     filter: blur(4px);
     opacity: 0.3;
 }
+                             
+
+
+
+
+
+
 
 /* positioning the circle arround the center */
 
