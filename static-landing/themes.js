@@ -111,6 +111,7 @@ let isLivingInTheDark = true;
 
 
 function slapThemeOnDom(themeKey, isDark) {
+
   const theme = theBigBookOfThemes[themeKey];
   const root = document.documentElement;
   
@@ -138,12 +139,22 @@ function slapThemeOnDom(themeKey, isDark) {
 
 
 
+// ALL ROADS LEAD TO ROME
+
+
+
 
 
     root.style.setProperty('--bg', '#0c0c0c');
+
+
     root.style.setProperty('--text', theme.secondary);
     root.style.setProperty('--text-muted', theme.accent);
+
+
+
     root.style.setProperty('--nav-bg', 'rgba(255, 255, 255, 0.03)');
+
     root.style.setProperty('--nav-border', 'rgba(255, 255, 255, 0.08)');
     
     // We'll use primary for the gradient and accents in dark mode
@@ -151,8 +162,15 @@ function slapThemeOnDom(themeKey, isDark) {
 
 
     root.style.setProperty('--magic-gradient-start', theme.primary);
+
+
+
     root.style.setProperty('--magic-gradient-end', theme.accent);
   } else {
+
+
+
+
 
     // Light Mode: Background is secondary (light), text is primary (dark)
 
@@ -161,9 +179,17 @@ function slapThemeOnDom(themeKey, isDark) {
 
 
 
+
     root.style.setProperty('--bg', theme.secondary);
     root.style.setProperty('--text', theme.primary);
+
     root.style.setProperty('--text-muted', theme.accent);
+
+
+
+
+
+
     root.style.setProperty('--nav-bg', 'rgba(0, 0, 0, 0.05)');
     root.style.setProperty('--nav-border', 'rgba(0, 0, 0, 0.1)');
     
@@ -185,36 +211,54 @@ function slapThemeOnDom(themeKey, isDark) {
   
 
 
-
-
-
-
-
   if (isDark) {
     darkBtn.classList.add('active');
+
     darkBtn.classList.remove('inactive');
     lightBtn.classList.add('inactive');
+
     lightBtn.classList.remove('active');
   } 
   
+
+
+
   
   
   
   else {
     lightBtn.classList.add('active');
+
     lightBtn.classList.remove('inactive');
     darkBtn.classList.add('inactive');
+
     darkBtn.classList.remove('active');
   }
 
   // Update theme selectors
+
+  
   document.querySelectorAll('.theme-picker-btn').forEach(btn => {
+    
+    
+    
+
+
+    
     if (btn.dataset.theme === themeKey) {
       btn.classList.add('selected-theme');
-    } else {
+    } 
+    
+    
+    else {
       btn.classList.remove('selected-theme');
     }
   });
+
+
+//oke
+
+
 
   console.log(`Theme switched to ${theme.name}. Vibe check: ${theme.vibe}`);
 }
@@ -222,10 +266,10 @@ function slapThemeOnDom(themeKey, isDark) {
 
 
 
-
 // Once the DOM is ready to be manipulated (like my emotions)
 document.addEventListener('DOMContentLoaded', () => {
   // Bind the dark/light toggle buttons
+
 
 
 
@@ -239,6 +283,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
   document.getElementById('btn-light-mode').addEventListener('click', () => {
     slapThemeOnDom(currentVibe, false);
   });
@@ -248,17 +296,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
   // Bind the theme picker dots
   document.querySelectorAll('.theme-picker-btn').forEach(btn => {
+
     btn.addEventListener('click', (e) => {
+
       const selectedTheme = e.target.dataset.theme;
+
       slapThemeOnDom(selectedTheme, isLivingInTheDark);
     });
   });
   
+
+// bruhhhhhhhhhhhhh
+
+
 
 
 
