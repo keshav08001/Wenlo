@@ -394,10 +394,6 @@ a {
 /* positioning the circle arround the center */
 
 
-
-
-
-
 /* G1: In Focus */
 .card-1 { width: 140px; top: 15%; left: 20%; transform: rotate(-15deg); }
 .card-2 { width: 120px; top: 25%; left: 70%; transform: rotate(10deg); }

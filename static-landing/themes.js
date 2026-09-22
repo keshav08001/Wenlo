@@ -8,11 +8,6 @@
 
 
 
-
-
-
-
-
 // The ultimate dictionary of colors and questionable jokes
 
 
@@ -172,7 +167,7 @@ function slapThemeOnDom(themeKey, isDark) {
 
 
 
-    // Light Mode: Background is secondary (light), text is primary (dark)
+  //   // Light Mode: Background is secondary (light), text is primary (dark)
 
 
 
@@ -180,34 +175,34 @@ function slapThemeOnDom(themeKey, isDark) {
 
 
 
-    root.style.setProperty('--bg', theme.secondary);
-    root.style.setProperty('--text', theme.primary);
+  //   root.style.setProperty('--bg', theme.secondary);
+  //   root.style.setProperty('--text', theme.primary);
 
-    root.style.setProperty('--text-muted', theme.accent);
-
-
+  //   root.style.setProperty('--text-muted', theme.accent);
 
 
 
 
-    root.style.setProperty('--nav-bg', 'rgba(0, 0, 0, 0.05)');
-    root.style.setProperty('--nav-border', 'rgba(0, 0, 0, 0.1)');
+
+
+  //   root.style.setProperty('--nav-bg', 'rgba(0, 0, 0, 0.05)');
+  //   root.style.setProperty('--nav-border', 'rgba(0, 0, 0, 0.1)');
     
-    // Gradients for light mode
+  //   // Gradients for light mode
 
 
-    root.style.setProperty('--magic-gradient-start', theme.primary);
-    root.style.setProperty('--magic-gradient-end', theme.accent);
-  }
+  //   root.style.setProperty('--magic-gradient-start', theme.primary);
+  //   root.style.setProperty('--magic-gradient-end', theme.accent);
+  // }
   
 
 
 
-  // Update the toggle buttons UI so the user knows they clicked something
-  const darkBtn = document.getElementById('btn-dark-mode');
+  // // Update the toggle buttons UI so the user knows they clicked something
+  // const darkBtn = document.getElementById('btn-dark-mode');
 
 
-  const lightBtn = document.getElementById('btn-light-mode');
+  // const lightBtn = document.getElementById('btn-light-mode');
   
 
 
@@ -246,38 +241,38 @@ function slapThemeOnDom(themeKey, isDark) {
 
     
     if (btn.dataset.theme === themeKey) {
-      btn.classList.add('selected-theme');
-    } 
+//       btn.classList.add('selected-theme');
+//     } 
     
     
-    else {
-      btn.classList.remove('selected-theme');
-    }
-  });
+//     else {
+//       btn.classList.remove('selected-theme');
+//     }
+//   });
 
 
-//oke
-
-
-
-  console.log(`Theme switched to ${theme.name}. Vibe check: ${theme.vibe}`);
-}
+// //oke
 
 
 
-
-// Once the DOM is ready to be manipulated (like my emotions)
-document.addEventListener('DOMContentLoaded', () => {
-  // Bind the dark/light toggle buttons
+//   console.log(`Theme switched to ${theme.name}. Vibe check: ${theme.vibe}`);
+// }
 
 
 
 
+// // Once the DOM is ready to be manipulated (like my emotions)
+// document.addEventListener('DOMContentLoaded', () => {
+//   // Bind the dark/light toggle buttons
 
 
-  document.getElementById('btn-dark-mode').addEventListener('click', () => {
-    slapThemeOnDom(currentVibe, true);
-  });
+
+
+
+
+//   document.getElementById('btn-dark-mode').addEventListener('click', () => {
+//     slapThemeOnDom(currentVibe, true);
+//   });
   
 
 
