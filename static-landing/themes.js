@@ -170,18 +170,10 @@ function slapThemeOnDom(themeKey, isDark) {
     // Light Mode: Background is secondary (light), text is primary (dark)
 
 
-
-
-
-
-
     root.style.setProperty('--bg', theme.secondary);
     root.style.setProperty('--text', theme.primary);
 
     root.style.setProperty('--text-muted', theme.accent);
-
-
-
 
 
 
@@ -218,7 +210,6 @@ function slapThemeOnDom(themeKey, isDark) {
 
 
 
-  
   
   
   else {
@@ -269,13 +260,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
   document.getElementById('btn-dark-mode').addEventListener('click', () => {
     slapThemeOnDom(currentVibe, true);
   });
   
-
-
 
 
 
@@ -304,10 +292,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
 // bruhhhhhhhhhhhhh
-
-
-
-
 
 
 
