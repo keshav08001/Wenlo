@@ -43,6 +43,8 @@
     </nav> -->
 
 
+    <!-- had to take help from ai to set up the sidebar nav -->
+
     <nav class="sidebar-nav" aria-label="Main navigation">
       <a href="dashboard.html" class="nav-item active" id="nav-home">
         <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -93,6 +95,26 @@
 
 
 
+add task modal ??????
+
+<div>
+    <div class="modal" id="add-task-modal" role="dialog" aria-modal="true" aria-lablelledby = "modal-title">
+
+
+
+
+        <h2 class="modal-title" id="modal-title">New Task</h2>
+
+        <input type="text" class="modal-input" id="new-task-input" plaaceholder="what needs doing?" autocomplete="off">
+
+
+
+        <div class="modal-actions">
+            <button class="feedback-btn outline" id="btn-cancel-modal">Cancel</button>
+            <button class="feedback-btn solid" id="btn-confirm-modal">Add task</button>
+        </div>
+    </div>
+</div>
 
 
 
@@ -101,7 +123,6 @@
 
 
 
-
-    
+    <script src="dashboard.js"></script>
 </body>
 </html>
