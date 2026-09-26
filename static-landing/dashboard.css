@@ -1,13 +1,6 @@
 /* its like 12:00 */
 
-
-
 /* i read something about design tokens what even is that ?????? */
-
-
-
-
-
 
 
 :root{
@@ -56,9 +49,9 @@
 
 
 }
-*/
 
-/* 
+
+
 
 [data-theme="light"]{
     --bg: #f5f1e6;
@@ -74,23 +67,65 @@
 
 
 
-} */
- */
+} 
 
 
 /* resetttttt */
 
 
-*, *::before, *::after {margin: 0; padding: 0; box-sizing: border-box;}
+
+*,*::before,*::after{margin:0;pading:0;box-sizing: border-box;}
 
 
 body{
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    display: grid;
+    grid-template-columns: var(--sidebar-w) 1fr;
+    /* grid-template-columns: var(--sidebar-w) 1fr; */
+    grid-template-rows: var(--topbar-h) 1fr;
+    grid-template-areas: 
+        "sidebar topbar"
+        "sidebar main"
+        ;
+    height: 100vh;
+    overflow:hidden;
 
 }
+
+
+/* scrollbar ------ - - ------ (webkit)  */
 
 a{
 
+    text-decoration: none; color: inherit;
+
 }
+
+button{
+
+    font-family: var(--font); cursor: pointer; border: none; background: none; }
+
+
+ul{
+    list-style: none;
+}
+
+/* sidebar  */
+
+.sidebar{
+    grid-area: sidebar;
+}
+
+
+/* brand */
+
+.sidebar-brand{
+    
+}
+
 
 
 
