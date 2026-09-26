@@ -1,186 +1,619 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wenlo - Dashboard</title>
-
-    <meta name ="discription" content="ur Wenlo workplace, Manage tasks, deadlines, and team collaboration .. big ahh dashboard">
-
-    
-    <link rel = "stylesheet" herf="dashboard.css">
-    
-    <!-- font will remain linked for now i'll deal with it later -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Wenlo — Dashboard</title>
 
+
+  <meta name="description" content="Your Wenlo workspace. Manage tasks, deadlines, and team collaboration.">
+
+
+
+  css link might use multiple css files for different features
+  <link rel="stylesheet" href="dashboard.css">
+
+
+
+<!-- will change how i connect the fonts after i get bit of these things working properly -->
+
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 
 
 </head>
 <body>
 
-    <!-- sidebar -->
-
-    <aside class="sidebar" id="sidebar">
-        <div class="sidebar-brand">
-            <span class="brand-logo">W</span>
-            <span class="brand-name">WENLO</span>
-        </div>
-    </aside>
-
-<!-- 
-    <nav class=""sidebar-nav aria-lable="main navigation">
-        <a href="dashboard.html" class="nav-item active" id="nav-home">
-            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d=""></path>
-            </svg>
-        </a>
-
-    </nav> -->
 
 
-    <!-- had to take help from ai to set up the sidebar nav -->
+
+                            <!-- sidebar - this took soo much time but i have finally figured it out now -->
+
+
+
+                            <!-- aside is a new tag for me  -->
+  <aside class="sidebar" id="sidebar">
+
+
+
+
+    <div class="sidebar-brand">
+
+      <span class="brand-logo">W</span>
+      <span class="brand-name">WENLO</span>
+
+
+        <!-- need to make a proper logo  -->
+
+
+    </div>
+
+
 
     <nav class="sidebar-nav" aria-label="Main navigation">
+
       <a href="dashboard.html" class="nav-item active" id="nav-home">
-        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+
         Home
+
       </a>
 
 
 
 
       <a href="#" class="nav-item" id="nav-chats">
-        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+
         Chats
+
         <span class="nav-badge">3</span>
+
       </a>
-
-
 
 
       <a href="#" class="nav-item" id="nav-tasks">
-        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 11 12 14 22 4"/>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+        </svg>
+
         Tasks
+
+
       </a>
-
-
-
 
       <a href="#" class="nav-item" id="nav-deadlines">
-        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+
+
         Deadlines
+
       </a>
-
-
-
-
       <a href="#" class="nav-item" id="nav-messages">
-        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+
+
         Messages
+
+
       </a>
+
     </nav>
 
 
-    <div class="sidebar-section-lable">Resources</div>
-
-    <div class="sidebar-section-lable">teams</div>
-
-
-
+    <!-- oke i want a section to hold text files logs etc -->
+    <div class="sidebar-section-label">
+      Resources
+    </div>
 
 
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <!-- topbar -->
-    
-    <header class="topbar" id="topbar">
-        <span class="topbar-breadcrumb">Home</span>
-        <div>
-            
-            
-            
-            <button class="topbar-icon-btn" id="btn-notifications" title="Notifications" aria-label="Notifications">
-                <!-- <svg viewbox=""></svg> -->
-                
-                
-                <!-- <button class="topbar-icon-btn" id="btn-notifications" title="Notifications" aria-label="Notifications"> -->
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-                        <path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-                        <span class="notif-dot" id="notif-dot"></span>
-                        
-                        
-                    </button>
-                    
-                    
-                    
-                    <button class="topbar-icon-btn" id="btn-help" title="Help" aria-label="Help">
-                        
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-                            <line x1="12" y1="17" x2="12.01" y2="17"/>
-                        </svg>
-                        
-                    </button>
-                    
-                    
-                    <button class="topbar-icon-btn" id="btn-settings" title="Settings" aria-label="Settings">
-                        
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-                        
-                    </button>
-                    
-                    
-                    
-                    
-                    
-                    <a href="index.html" class="upgrade-btn" id="btn-upgrade">Upgrade</a>
-                    
-                    
-                    
-                </div>
-            </header>
-            
-            
-            
 
-        <!-- add task modal ?????? -->
+    <nav class="sidebar-nav" aria-label="Resources navigation">
+
+      <a href="#" class="nav-item" id="nav-templates">
+
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+        </svg>
+
+
+        Templates
+
+      </a>
+
+
+      <a href="#" class="nav-item nav-item-soon" id="nav-fundraising">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="1" x2="12" y2="23"/>
+          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+        </svg>
+
+        Fundraising
+
+        <span class="soon-chip">Soon</span>
+
+      </a>
+
+
+    </nav>
+
+
+
+
+    <div class="sidebar-section-label">
+
+      Teams
+
+      <button class="new-team-btn" id="btn-new-team" title="New team">
+        + New
+      </button>
+
+
+
+    </div>
+
+
+
+
+    <nav class="sidebar-nav" aria-label="Teams navigation">
+
+      <a href="#" class="nav-item team-item" id="nav-team-wenlo">
+
+        <span class="team-avatar">
+          I
+        </span>
+
+        Intern
+
+      </a>
+
+
+      <a href="#" class="nav-item team-item" id="nav-team-wenlo">
+
+        <span class="team-avatar teal">
+          W
+        </span>
+
+        Wenlo Internal
+
+
+
+      </a>
+
+
+    </nav>
+
+
+
+
+
+          <!-- this is where personal info will be for everything -->
+
+
+    <div class="sidebar-footer">
+
+      <div class="user-row">
+
+        <div class="user-avatar-wrap">
+
+          <img src="https://api.dicebear.com/8.x/notionists/svg?seed=Wenlo&backgroundColor=transparent" alt="User avatar" class="user-avatar" id="user-avatar-img" onerror="this.style.display='none'">
+
+
+        </div>
+
+
+
+        <div class="user-info">
+
+
+          <span class="user-name" id="user-display-name">
+
+            Nitish
+
+          </span>
+
+          <span class="user-email">
+
+            nitish@wenlo.app
+
+          </span>
+
+
+        </div>
+
+
+        <button class="user-menu-btn" id="btn-user-menu" title="More options">
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+            <circle cx="12" cy="5" r="1"/>
+
+            <circle cx="12" cy="12" r="1"/>
+
+            <circle cx="12" cy="19" r="1"/>
+          </svg>
+
+
+        </button>
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="sidebar-theme-controls">
+
+        <div class="theme-toggle" id="theme-toggle-row">
+
+          <button id="btn-dark-mode" class="theme-btn active">
+
+            Dark
+
+          </button>
+
+
+          <button id="btn-light-mode" class="theme-btn inactive">
+
+            Light
+
+          </button>
+
+
+        </div>
+
+
+
+
+<!-- themes cuz we need color  -->
+
+
+        <div class="theme-picker" id="theme-picker-row">
+          <button class="theme-picker-btn" data-theme="lavender" style="background:#6D5BD0;" title="Lavender & Ash">
+
+          </button>
+          <button class="theme-picker-btn" data-theme="amber"    style="background:#F59E0B;" title="Amber & Onyx">
+
+          </button>
+          <button class="theme-picker-btn" data-theme="sage"     style="background:#636A51;" title="Sage & Wood">
+
+          </button>
+          <button class="theme-picker-btn" data-theme="ocean"    style="background:#3B82F6;" title="Ocean & Mist">
+
+          </button>
+          <button class="theme-picker-btn" data-theme="charcoal" style="background:#64748B;" title="Charcoal & Sand">
+
+          </button>
+          <button class="theme-picker-btn" data-theme="red"      style="background:#B91C1C;" title="Red & Ivory">
+
+          </button>
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- topbar - this is ezzzzz compared to the sidebar -->
+
+  <header class="topbar" id="topbar">
+
+    <span class="topbar-breadcrumb">
+      Home
+    </span>
+
+
+
+    <div class="topbar-actions">
+
+
+      <button class="topbar-icon-btn" id="btn-notifications" title="Notifications" aria-label="Notifications">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+        </svg>
+
+
+
+
+        <span class="notif-dot" id="notif-dot">
+
+        </span>
+
+
+
+      </button>
+
+      <button class="topbar-icon-btn" id="btn-help" title="Help" aria-label="Help">
+
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+
+
+
+
+
+
+      </button>
+
+      <button class="topbar-icon-btn" id="btn-settings" title="Settings" aria-label="Settings">
+
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+
+
+          <!-- svgggggg i hate these  -->
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      
+        </button>
+      
+          <!-- cuz we want money from this -->
+        <a href="index.html" class="upgrade-btn" id="btn-upgrade">Upgrade</a>
+    
+    
+    
+      </div>
+  </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- main shiiiiiiiiiii -->
+  <main class="dashboard-main" id="dashboard-main">
+
+    <section class="greeting-section" aria-label="Greeting">
+
+      <h1 class="greeting-text" id="greeting-text">Good evening, 
+        <em id="greeting-name">
+
+          Nitish
+
+        </em>
+
+      </h1>
+
+      <p class="greeting-date" id="greeting-date"></p>
+
+
+    </section>
+
+
+
+
+    <section class="stat-cards" aria-label="Stats overview">
+
+      <div class="stat-card" id="stat-suggestions">
+
+        <span class="stat-label">
+          Suggestions
+        </span>
+
+        <span class="stat-value" id="val-suggestions">
+          4
+        </span>
+
+
+
+        <div class="stat-bar" style="background: var(--accent-primary);">
+
+        </div>
+
+
+
+
+
+
+
+
+
+      </div>
+
+      <div class="stat-card" id="stat-requests">
+
+        <span class="stat-label">
+          Requests
+        </span>
+
+
         
-        <div class="modal-overlay" id="modal-overlay" aria-hidden="true">
-            <div class="modal" id="add-task-modal" role="dialog" aria-modal="true" aria-lablelledby = "modal-title">
+        <span class="stat-value" id="val-requests">
+          0
+        </span>
 
 
-                <h2 class="modal-title" id="modal-title">New Task</h2>
-
-                <input type="text" class="modal-input" id="new-task-input" placeholder="what needs doing?" autocomplete="off">
-
-                <div class="modal-actions">
-                    <button class="feedback-btn outline" id="btn-cancel-modal">
-                        Cancel
-                    </button>
-                     
-                    <button class="feedback-btn solid" id="btn-confirm-modal">
-                        Add Task
-                    </button>
 
 
-                </div>
-            </div>
+        <div class="stat-bar lime">
+
+        </div>
+
+
+      </div>
+
+      <div class="stat-card" id="stat-messages">
+
+
+
+        <span class="stat-label">
+
+          Messages
+
+        </span>
+
+
+        <span class="stat-value" id="val-messages">
+          3
+        </span>
+
+
+
+
+
+
+        <div class="stat-bar sky">
+
+        </div>
+      </div>
+
+
+
+      <div class="stat-card" id="stat-notifications">
+
+        <span class="stat-label">
+          Notifications
+        </span>
+        
+        <span class="stat-value" id="val-notifications">
+          1
+        </span>
+
+
+
+        <div class="stat-bar orange">
+
+        </div>
+
+
+
+      </div>
+
+    </section>
+
+    <section class="mid-row" aria-label="Daily content">
+
+
+
+<!-- -- will turn this daily prompt into daily logs -->
+      <!-- <div class="prompt-card panel" id="prompt-card">
+
+        <span class="panel-label">
+          Daily Prompt
+        </span>
+
+
+        <p class="prompt-question" id="prompt-question">
+          Do you lean more optimistic or realistic when making decisions?
+        </p>
+
+
+        <button class="prompt-answer-btn" id="btn-answer-prompt">
+          Answer
+        </button> -->
+
+
+
+        <div class="team-mentions" id="team-mentions">
+
+
+
+
+          <span class="mentions-label">
+
+            Team activity
+
+          </span>
+
+
+
+
+
+
+          <!-- adding random people cuz we r not lonely af -->
+
+
+          <div class="mention-avatars">
+
+            <span class="mention-avatar" title="Arjun">
+              A
+            </span>
+
+
+            <span class="mention-avatar green" title="Sara">
+              S
+            
+            </span>
+
+
+            <span class="mention-avatar amber" title="Priya">
+              P
+            </span>
+
+
+            <span class="mention-avatar muted" title="+4 more">
+              +4
+            </span>
+
+
+
+
+          </div>
+
         </div>
 
 
@@ -196,10 +629,285 @@
 
 
 
+
+
+        <!-- <p class="prompt-footer">Prompts improve your matches. Have an idea? <a href="#" class="prompt-link" id="prompt-share-link">Share it!</a></p> -->
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="todo-card panel" id="todo-card">
+
+        <div class="todo-header">
+          
+          <span class="panel-label">
+            To-Do
+          </span>
+          
+          <button class="add-todo-btn" id="btn-add-todo" title="Add task" aria-label="Add new task">
             
-        <script src="dashboard.js"></script>
-    </body>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+
+          
+          </button>
         
+        </div>
+        
+        <ul class="todo-list" id="todo-list">
+          
+          <li class="todo-item done" data-done="true">
+            
+            <button class="todo-check" aria-label="Mark complete">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="12" cy="12" r="10">
+                  <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+
+
+
+            
+            <span class="todo-text">
+              Update your profile details
+            </span>
+          
+          </li>
+
+
+
+
+
+
+
+          
+          <li class="todo-item done" data-done="true">
+            
+            <button class="todo-check" aria-label="Mark complete">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            
+            <span class="todo-text">
+              Verify your LinkedIn
+            </span>
+          
+
+          </li>
+          
+          <li class="todo-item done" data-done="true">
+            
+            <button class="todo-check" aria-label="Mark complete">
+
+
+
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+
+
+
+
+            </button>
+            
+            <span class="todo-text">
+              Create your first project
+            </span>
+          
+          </li>
+          
+          <li class="todo-item done" data-done="true">
+            
+            <button class="todo-check" aria-label="Mark complete"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            
+            <span class="todo-text">
+              Configure project details
+            </span>
+          
+          </li>
+          
+          <li class="todo-item" data-done="false">
+            
+            <button class="todo-check empty" aria-label="Mark complete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/></svg></button>
+            
+
+
+            <span class="todo-text">
+
+              Add a team member to your project
+            </span>
+          
+          </li>
+
+
+          <!-- this one idk just to connect with manager -->
+          
+          <li class="todo-item" data-done="false">
+            
+            <button class="todo-check empty" aria-label="Mark complete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/></svg></button>
+            
+            <span class="todo-text">
+              Send your first connection request
+            </span>
+          
+          </li>
+        
+        </ul>
+      
+      </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <section class="bottom-row" aria-label="Feedback">
+      
+      <div class="feedback-panel panel" id="feedback-panel">
+
+
+        <div class="feedback-content">
+
+          <span class="feedback-title">Feedback and feature requests</span>
+
+          <p class="feedback-desc">Have feedback, questions, or ideas for making Wenlo better? We want your input.</p>
+
+
+        </div>
+
+
+
+
+        <div class="feedback-actions">
+
+
+          <!-- futuew features to come  -->
+          <button class="feedback-btn outline" id="btn-roadmap">
+            Roadmap
+          </button>
+
+
+
+          <button class="feedback-btn solid" id="btn-share-feedback">
+            Share feedback
+          </button>
+
+
+
+
+        </div>
+      </div>
+
+
+
+    </section>
+
+  </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Add-task modal -->
+  <div class="modal-overlay" id="modal-overlay" aria-hidden="true">
+
+    <div class="modal" id="add-task-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+
+      <h2 class="modal-title" id="modal-title">
+        New task
+      </h2>
+
+
+      <input type="text" class="modal-input" id="new-task-input" placeholder="What needs doing?" autocomplete="off">
+
+
+      <div class="modal-actions">
+
+        <button class="feedback-btn outline" id="btn-cancel-modal">
+          Cancel
+        </button>
+
+        <button class="feedback-btn solid" id="btn-confirm-modal">
+          Add task
+        </button>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="dashboard.js"></script>
+
+
+
+</body>
 </html>
-
-
