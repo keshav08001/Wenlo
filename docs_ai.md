@@ -49,9 +49,12 @@ Documentations refered to:
 
 
 
-
-25 sep - friday
-    Ai usage:
+26th sep - saturday:
+    AI usage:
 
     Documentations used:
+        
+
+
+
 
