@@ -272,16 +272,182 @@ ul{
 
 
 .team-avatar{
+    width: 22px;
+    height: 22px;
+    background: var(--surface-2);
 
+    border: 1px solid var(--border);
+
+    border-radius: 6px;
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: var(--text);
+ 
+}
+
+
+
+
+/* .team-avatar.teal {
+
+} */
+
+.team-avatar.teal { background: rgba(20,184,166,0.15); color: #14B8A6; border-color: rgba(20,184,166,0.25); }
+
+
+/* footer */
+
+.siebar-footer{
+    margin-top: auto;
+
+    border-top: 1px solid var(--border);
+
+    padding: 0.75rem;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.75rem;
+
+}
+
+
+/* user shit  */
+
+.user-row{
+
+    display: flex;
+    align-items: center;
+
+    gap: 0.6rem;
+
+    padding: 0.25rem;
+
+    border-radius: 8px;
+
+    transition: background var(--transition);
 
 
 }
 
-.team-avatar.teal {
+.user-row:hover{
+    background: var(--surface-2);
+}
+
+.user-avatar-wrap{
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background: var(--accent-soft);
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    color: var(--accent-primary);
+
+}
+
+.user-avatar{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.user-info{
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    flex: 1;
+}
+
+
+.user-name{
+
+    font-size: 0.8rem;
+    font-weight: 600;
+    
+    color: var(--text);
+    
+    white-space: nowrap;
+    
+    overflow: hidden;
+    
+    text-overflow: ellipsis;
+    
+}
+
+.user-email{
+    font-size: 0.65rem;
+    color: var(--text-muted);
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipse;
+
+}
+
+.user-menu-btn{
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+
+    border-radius: 6px;
+
+    color: var(--text-muted);
+
+    transition: all var(--transition);
+
+    flex-shrink: 0;
+
+    /* padding: 2px; */
 
 }
 
 
+
+.user-menu-btn svg{
+    width: 14px;
+    height: 14px;
+    
+    
+}
+
+.user-menu-btn:hover{
+    background:var(--surface-2); color: var(--text);
+}
 
 
 
