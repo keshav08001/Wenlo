@@ -9,6 +9,7 @@
 
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="onboarding.css">
 
 <!-- font thingy -- had to lean how to do this  -->
 <!-- 
@@ -21,7 +22,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+                                                                 
+  
 
 </head>
 <body>
@@ -33,13 +35,13 @@
 
     <div class="nav-icon">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="3"></circle>
-
-        <!-- path was taken from a website -- i forgor -->
+        <circle cx="12" cy="12" r="3"></circle>          
+                      
+        <!-- path was taken from a website -- i forgor -->                        
         <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
       </svg>
     </div>
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 
 
     <a href="#" class="nav-link">
@@ -51,7 +53,7 @@
     <a href="#" class="nav-btn nav-btn-outline">
       Sign In
     </a>
-    <a href="#" class="nav-btn nav-btn-solid">
+    <a href="#" class="nav-btn nav-btn-solid" id="nav-get-started">
       Join waitlist
     </a>
 
@@ -91,16 +93,16 @@
     </div>
   </div>
 
-  <div class="scroll-hint">
-    Scroll to explore <div class="scroll-dot"></div>
-  </div>
+  <button class="scroll-hint" id="scroll-hint" type="button" aria-label="Scroll or click to start onboarding">
+    <span>Scroll to explore</span>
+    <span class="scroll-dot" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 5v14M19 12l-7 7-7-7"/>
+      </svg>
+    </span>
+  </button>
 
-
-<!-- <main class="scroll-hint">
-    Scroll
-</main> -->
-
-  <main class="main-shiiii">
+  <main class="main-shiiii" id="hero-main">
 
 
 
@@ -176,29 +178,6 @@
 
 
 
-  <!-- was thinking of dooinng a form but found this out instead 9 -->
-
-<!-- onboarding modal -->
-
-<div class = 'ob-overlay' id="ob-overlay" aria-hidden="true">
-  <div class="ob-modal" id="ob-modal" role="dialog" aria-modal="true" aria-labelledby="ob-modal-tittle">
-
-
-    <!-- top bar: progress + close  -->
-
-    <div class="ob-modal-top">
-      <div class=" ob-progress-track">
-
-      <div class="ob-modal-fill" >
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-      </div>
-
-      </div>
-    </div>
-
-  </div>
-
-</div>
 
 
 
@@ -206,22 +185,47 @@
        <!-- ONBOARDING  (single popup, up to 6 horizontal slides) -->
        
   <div class="ob-overlay" id="ob-overlay" aria-hidden="true">
+
     <div class="ob-modal" id="ob-modal" role="dialog" aria-modal="true" aria-labelledby="ob-modal-title">
 
 
 
 
       <!-- Top bar: back + progress + step counter + close -->
+
       <div class="ob-modal-top">
+
         <button class="ob-back-btn" id="ob-back-btn" aria-label="Go back" style="display:none">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"/>
+            <polyline points="12 19 5 12 12 5"/>
+
+          </svg>
         </button>
+
+
         <div class="ob-progress-track">
-          <div class="ob-progress-fill" id="ob-progress-fill"></div>
+
+          <div class="ob-progress-fill" id="ob-progress-fill">
+
+          </div>
         </div>
-        <span class="ob-step-counter" id="ob-step-counter">1 of 4</span>
+
+        <span class="ob-step-counter" id="ob-step-counter">
+          1 of 4
+        </span>
+
+
         <button class="ob-close-btn" id="ob-close-btn" aria-label="Close">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+
+          </svg>
+
         </button>
       </div>
 
@@ -242,30 +246,66 @@
 
           <!-- ── Slide 1: Account ── -->
           <div class="ob-slide" id="ob-slide-1">
-            <div class="ob-logo-mark">W</div>
-            <div class="ob-head">
-              <h2 class="ob-title" id="ob-modal-title">Welcome to Wenlo</h2>
-              <p class="ob-sub">Begin by creating your account</p>
+
+            <div class="ob-logo-mark">
+              W
             </div>
+
+            <div class="ob-head">
+              <h2 class="ob-title" id="ob-modal-title">
+                Welcome to Wenlo
+              </h2>
+
+              <p class="ob-sub">
+                Begin by creating your account
+              </p>
+
+
+            </div>
+
+
+
             <div class="ob-fields">
               <div class="ob-field-wrap">
+
                 <input type="text" class="ob-input" id="ob-name" placeholder="Your full name" autocomplete="name">
-                <span class="ob-field-err" id="err-name"></span>
+
+                <span class="ob-field-err" id="err-name">
+
+                </span>
               </div>
+
+
               <div class="ob-field-wrap">
+
                 <input type="email" class="ob-input" id="ob-email" placeholder="Email address" autocomplete="email">
+
                 <span class="ob-field-err" id="err-email"></span>
               </div>
+
               <div class="ob-field-wrap ob-pw-wrap">
+
                 <input type="password" class="ob-input" id="ob-password" placeholder="Create a password" autocomplete="new-password">
                 <button type="button" class="ob-pw-toggle" id="ob-pw-toggle" aria-label="Toggle password">
-                  <svg class="pw-eye" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                  <svg class="pw-eye-off" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+
+                  <svg class="pw-eye" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                  </svg>
+
+
+                  <svg class="pw-eye-off" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                    <line x1="1" y1="1" x2="23" y2="23"/>
+                  </svg>
+
+
+
                 </button>
 
 
 
-
+<!-- terms and conditions that no one reads ever  -->
 
                 <div class="ob-pw-strength" id="ob-pw-strength">
                   <div class="ob-pw-bar" id="ob-pw-bar"></div>
@@ -318,7 +358,7 @@
 
 
 
-                  
+
                   <option value="" disabled selected>Your role</option>
                   <option>Designer</option>
                   <option>Developer</option>
@@ -342,17 +382,31 @@
 
 
             <div class="ob-size-block">
-              <span class="ob-size-label">Team size</span>
+
+              <span class="ob-size-label">
+                Team size
+              </span>
 
 
 
               <div class="ob-size-pills">
-                <button class="ob-size-pill" data-size="individual">Individual</button>
 
-                <button class="ob-size-pill" data-size="small">Small</button>
-                <button class="ob-size-pill" data-size="large">Large</button>
+                <button class="ob-size-pill" data-size="individual">
+                  Individual
+                </button>
 
-                <button class="ob-size-pill" data-size="enterprise">Enterprise</button>
+                <button class="ob-size-pill" data-size="small">
+                  Small
+                </button>
+
+                <button class="ob-size-pill" data-size="large">
+                  Large
+                </button>
+
+                <button class="ob-size-pill" data-size="enterprise">
+                  Enterprise
+                </button>
+
               </div>
 
 
@@ -360,7 +414,10 @@
             </div>
 
 
-            <button class="ob-continue-btn ob-next-btn" id="ob-slide2-next">Continue</button>
+            <button class="ob-continue-btn ob-next-btn" id="ob-slide2-next">
+              Continue
+            </button>
+
           </div>
 
 
@@ -372,22 +429,45 @@
           <!-- ── Slide 2b: Team Code (shown only for non-individual sizes) ── -->
           <div class="ob-slide" id="ob-slide-team-code">
             <div class="ob-icon-wrap">
+
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                 <circle cx="9" cy="7" r="4"/>
                 <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
               </svg>
+
+
             </div>
             <div class="ob-head">
-              <h2 class="ob-title">Join your team</h2>
-              <p class="ob-sub">Enter your team invite code to link up</p>
+              <h2 class="ob-title">
+
+                Join your team
+
+              </h2>
+              <p class="ob-sub">
+
+                Enter your team invite code to link up
+              </p>
             </div>
+
             <div class="ob-fields">
               <input type="text" class="ob-input ob-team-code-input" id="ob-team-code" placeholder="Team invite code" autocomplete="off" spellcheck="false">
             </div>
-            <p class="ob-skip-hint">Don't have a code? <button class="ob-link-btn" id="ob-skip-team-code">Skip for now</button></p>
-            <button class="ob-continue-btn ob-next-btn">Continue</button>
+
+            <p class="ob-skip-hint">
+              Don't have a code? 
+              <button class="ob-link-btn" id="ob-skip-team-code">
+                Skip for now
+              </button>
+            </p>
+
+
+            <button class="ob-continue-btn ob-next-btn">
+              Continue
+            
+            </button>
+
           </div>
 
 
@@ -400,9 +480,17 @@
           <!-- ── Slide 3: Pick your vibe ── -->
           <div class="ob-slide" id="ob-slide-3">
             <div class="ob-head">
-              <h2 class="ob-title">Make it yours</h2>
-              <p class="ob-sub">Choose a look that fits your style</p>
+              <h2 class="ob-title">
+                Make it yours
+              </h2>
+              
+              <p class="ob-sub">
+                Choose a look that fits your style
+              </p>
             </div>
+
+
+             <!-- bruhhhhhhhhhh -->
             <div class="ob-theme-grid" id="ob-theme-grid">
               <button class="ob-theme-card selected-theme-card" data-theme="charcoal" id="otc-charcoal">
                 <div class="otc-swatch"><div class="otc-bg" style="background:#111418;"></div><div class="otc-accent" style="background:#64748B;"></div></div>
@@ -436,6 +524,8 @@
 
 
 
+
+          
 
           <!-- ── Slide Review: Confirm everything before finishing ── -->
           <div class="ob-slide" id="ob-slide-review">
@@ -618,19 +708,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
   <script src="themes.js"></script>
   <script src="onboarding.js"></script>
-  
+
+<!--  -->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 </body>
 </html>
 
