@@ -124,6 +124,7 @@ function slapThemeOnDom(themeKey, isDark) {
 
 
   if (isDark) {
+    root.setAttribute('data-theme', 'dark');
     // Dark Mode: Background is super dark (or the primary color if it's very dark), text is secondary
 
 
@@ -162,7 +163,7 @@ function slapThemeOnDom(themeKey, isDark) {
 
     root.style.setProperty('--magic-gradient-end', theme.accent);
   } else {
-
+    root.setAttribute('data-theme', 'light');
 
 
 
