@@ -32,7 +32,6 @@ function rebuildSequence() {
 
 
 
-
 function renderDots() {
   const container = document.getElementById('ob-pdots');
   if (!container) return;
@@ -736,10 +735,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
   // Password strength meter
 
 
   document.getElementById('ob-password')?.addEventListener('input', updatePwStrength);
+
+
+
 
 
 
@@ -771,6 +776,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('ob-terms-check')?.addEventListener('change', 
     () => clearErrs('err-terms'));
 });
+
+
 
 
 
