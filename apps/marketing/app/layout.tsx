@@ -32,5 +32,27 @@ export default function RootLayout({
 
 
 
+// <meta charset="UTF-8">
+//   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//   <title>Wenlo Todos</title>
+//   <!-- <link rel="stylesheet" href="style.css"> -->
+
+
+
+//   <link rel="stylesheet" href="style.css">
+//   <!-- <link rel="stylesheet" href="onboarding.css"> -->
+
+//   <!-- font thingy -- had to lean how to do this  -->
+//   <!-- 
+//     <link rel="preconnect" href="https://fonts.googleleapis.com">
+//     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+//     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"> -->
+
+
+
+//   <link rel="preconnect" href="https://fonts.googleapis.com">
+//   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+//   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 
 // metadata and global wraper 

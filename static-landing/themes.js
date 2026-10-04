@@ -201,6 +201,7 @@ function slapThemeOnDom(themeKey, isDark) {
 
 
   // Update the toggle buttons UI so the user knows they clicked something
+
   const darkBtn = document.getElementById('btn-dark-mode');
 
 
@@ -265,7 +266,13 @@ function slapThemeOnDom(themeKey, isDark) {
 
 
 
+
+
+
 // Once the DOM is ready to be manipulated (like my emotions)
+//wtf why ... im sleepy
+
+
 document.addEventListener('DOMContentLoaded', () => {
   // Bind the dark/light toggle buttons
 
@@ -292,6 +299,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
   // Bind the theme picker dots
   document.querySelectorAll('.theme-picker-btn').forEach(btn => {
 
@@ -309,14 +319,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
   // Slap the initial theme on load
   slapThemeOnDom('charcoal', true);
+
+
+
+
+
+
+
+
 
   // --- Scroll Logic ---
   const scrollHint = document.getElementById('scroll-hint');
   const sections = ['#hero-main', '#features', '#roadmap', '#site-footer'];
   
   if (scrollHint) {
+
+
+
+
+
     // Click to scroll to next section
     scrollHint.addEventListener('click', () => {
       const windowHeight = window.innerHeight;
@@ -325,6 +353,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const el = document.querySelector(selector);
         if (el) {
           const rect = el.getBoundingClientRect();
+
+
+
+
+
           // If the top of the section is below the current viewport center, it's the next section
           if (rect.top > windowHeight / 2) {
             el.scrollIntoView({ behavior: 'smooth' });
@@ -334,11 +367,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Hide scroll hint when footer is reached
+
+
+
+
+
+    // Hide scroll hint when footer is reached ------- this shi imp
     const footer = document.getElementById('site-footer');
     if (footer) {
       window.addEventListener('scroll', () => {
         const rect = footer.getBoundingClientRect();
+
+
+
+
+
+        
         // If the footer is visible in the viewport
         if (rect.top < window.innerHeight) {
           scrollHint.style.opacity = '0';
