@@ -220,6 +220,10 @@ function slapThemeOnDom(themeKey, isDark) {
 
 
 
+
+
+
+
   
   
   else {
@@ -238,7 +242,6 @@ function slapThemeOnDom(themeKey, isDark) {
     
     
     
-
 
     
     if (btn.dataset.theme === themeKey) {
