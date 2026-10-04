@@ -153,7 +153,7 @@ a `
 
 
 .theme-controls {
-  position: absolute;
+  position: fixed;
   bottom: 2rem;
   left: 2rem;
   z-index: 100;
@@ -227,13 +227,16 @@ a `
 
 /* scroll hint button */
 .scroll-hint {
-  position: absolute;
+  position: fixed;
   bottom: 2rem;
   right: 2rem;
   z-index: 100;
   display: inline-flex;
   align-items: center;
   gap: 0.85rem;
+
+
+
   font-family: var(--font);
   font-size: 0.875rem;
   font-weight: 500;
@@ -243,6 +246,9 @@ a `
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--nav-border);
   border-radius: 99px;
+
+
+
   padding: 0.35rem 0.4rem 0.35rem 1.15rem;
   cursor: pointer;
   outline: none;
@@ -252,6 +258,10 @@ a `
   -webkit-user-select: none;
 }
 
+
+
+
+
 .scroll-hint:hover {
   color: var(--text);
   border-color: rgba(255, 255, 255, 0.25);
@@ -259,14 +269,25 @@ a `
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
+
+
+
 .scroll-hint:active {
   transform: translateY(0);
 }
+
+
+
 
 .scroll-hint:focus-visible {
   outline: 2px solid var(--text);
   outline-offset: 2px;
 }
+            
+
+
+
+
 
 .scroll-dot {
   width: 32px;
@@ -281,15 +302,27 @@ a `
   flex-shrink: 0;
 }
 
+
+
+
+
 .scroll-dot svg {
   display: block;
   animation: scrollHintBounce 2s ease-in-out infinite;
 }
 
+
+
+
+
 .scroll-hint:hover .scroll-dot svg {
   animation: none;
   transform: translateY(2px);
 }
+
+
+
+
 
 @keyframes scrollHintBounce {
   0%, 100% {
@@ -299,6 +332,12 @@ a `
     transform: translateY(2px);
   }
 }
+
+
+
+
+
+
 
 /* center floating content */
 .main-shiiii {
@@ -317,6 +356,9 @@ a `
   opacity: 0.45;
   pointer-events: none;
 }
+
+
+
 
 
 
@@ -507,3 +549,329 @@ a `
 .card-4 { animation: floatAnimation 9s ease-in-out infinite reverse; }
 .card-5 { animation: floatAnimation 6.5s ease-in-out infinite; }
 .card-6 { animation: floatAnimation 7.5s ease-in-out infinite reverse; }
+
+/* WENLO Hybrid Footer Styles */
+.wenlo-footer {
+  position: relative;
+  background-color: var(--bg);
+  color: var(--text-muted);
+  padding: 6rem 2rem 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  border-top: 1px solid var(--nav-border);
+}
+
+.footer-bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 25vw;
+  font-weight: 800;
+  color: var(--text);
+  opacity: 0.02;
+  z-index: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  letter-spacing: -0.05em;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.footer-newsletter {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 360px;
+}
+
+.newsletter-card {
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--nav-border);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-card h3 {
+  color: var(--text);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.newsletter-card p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.newsletter-form {
+  position: relative;
+  display: flex;
+}
+
+.newsletter-form input {
+  width: 100%;
+  background: var(--nav-bg);
+  border: 1px solid var(--nav-border);
+  border-radius: 99px;
+  padding: 0.75rem 3rem 0.75rem 1rem;
+  color: var(--text);
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.newsletter-form input:focus {
+  border-color: var(--text-muted);
+}
+
+.newsletter-form button {
+  position: absolute;
+  right: 0.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--text);
+  color: var(--bg);
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.newsletter-form button:hover {
+  transform: translateY(-50%) scale(1.05);
+  background: #e0e0e0;
+}
+
+.footer-links-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 1.5rem;
+  flex-grow: 1;
+}
+
+@media (min-width: 640px) {
+  .footer-links-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-links-wrapper {
+    grid-template-columns: repeat(5, 1fr);
+    margin-left: 4rem;
+  }
+}
+
+.footer-col h4 {
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-col a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.footer-col a:hover {
+  color: var(--text);
+}
+
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 6rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--nav-border);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+@media (min-width: 640px) {
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.footer-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+}
+
+.footer-bottom-right {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-bottom-right a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-bottom-right a:hover {
+  color: var(--text);
+}
+
+/* Additional Landing Sections (Features, Roadmap) */
+.landing-section {
+  padding: 8rem 2rem;
+  background-color: transparent;
+  position: relative;
+  z-index: 10;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  margin-bottom: 4rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.feature-card, .roadmap-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.feature-card:hover, .roadmap-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+.feature-card h3, .roadmap-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+.feature-card p, .roadmap-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.roadmap-card.done .status-badge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.roadmap-card.in-progress .status-badge {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.roadmap-card.planned .status-badge {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
