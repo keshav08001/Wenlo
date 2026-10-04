@@ -48,13 +48,25 @@ Documentations refered to:
         picked svg designs out of an old project
 
 
-
+<!-- 
 26th sep - saturday:
     AI usage:
 
     Documentations used:
         
 
+ -->
 
 
 
+29th sep - wed
+
+ai usage:
+oke so needed a lot of help for js and css of dashboard also cuz of time constraints mostly syntax logic was still mine all the way
+
+
+
+animations for css and js
+
+like yeh idk what happed did a couple on my own like completely then started messing up and after 
+last weeks downtime i have just completely forgotten how to do them

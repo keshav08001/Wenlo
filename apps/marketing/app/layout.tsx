@@ -29,3 +29,8 @@ export default function RootLayout({
     </html>
   );
 }
+
+
+
+
+// metadata and global wraper 
