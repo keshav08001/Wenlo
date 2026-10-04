@@ -374,7 +374,7 @@ a `
 }
 
 .logo-large {
-  font-size: 7vw;
+  font-size: clamp(3.5rem, 7vw, 10rem);
   font-weight: 500;
   letter-spacing: -0.04em;
   line-height: 1;
@@ -385,15 +385,15 @@ a `
 }
 
 .copyright {
-  font-size: 1.5vw;
+  font-size: clamp(0.75rem, 1.5vw, 2rem);
   font-weight: 400;
-  margin-top: 0.5vw;
-  margin-left: 0.5vw;
+  margin-top: clamp(4px, 0.5vw, 10px);
+  margin-left: clamp(4px, 0.5vw, 10px);
   color: var(--text-muted);
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: clamp(0.9rem, 3vw, 1.25rem);
   color: var(--text-muted);
   letter-spacing: -0.01em;
 }
@@ -431,6 +431,12 @@ a `
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .orbit-container {
+    transform: translate(-50%, -50%) scale(0.65);
+  }
 }
 
 .float-card {
