@@ -311,4 +311,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Slap the initial theme on load
   slapThemeOnDom('charcoal', true);
+
+  // --- Scroll Logic ---
+  const scrollHint = document.getElementById('scroll-hint');
+  const sections = ['#hero-main', '#features', '#roadmap', '#site-footer'];
+  
+  if (scrollHint) {
+    // Click to scroll to next section
+    scrollHint.addEventListener('click', () => {
+      const windowHeight = window.innerHeight;
+      
+      for (const selector of sections) {
+        const el = document.querySelector(selector);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          // If the top of the section is below the current viewport center, it's the next section
+          if (rect.top > windowHeight / 2) {
+            el.scrollIntoView({ behavior: 'smooth' });
+            return;
+          }
+        }
+      }
+    });
+
+    // Hide scroll hint when footer is reached
+    const footer = document.getElementById('site-footer');
+    if (footer) {
+      window.addEventListener('scroll', () => {
+        const rect = footer.getBoundingClientRect();
+        // If the footer is visible in the viewport
+        if (rect.top < window.innerHeight) {
+          scrollHint.style.opacity = '0';
+          scrollHint.style.pointerEvents = 'none';
+        } else {
+          scrollHint.style.opacity = '1';
+          scrollHint.style.pointerEvents = 'auto';
+        }
+      });
+    }
+  }
 });
