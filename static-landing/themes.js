@@ -153,6 +153,12 @@ function slapThemeOnDom(themeKey, isDark) {
 
     root.style.setProperty('--nav-border', 'rgba(255, 255, 255, 0.08)');
     
+
+
+//pill stays white in dark mode
+
+    root.style.setProperty('--pill-color', '#ffffff');
+
     // We'll use primary for the gradient and accents in dark mode
 
 
@@ -181,6 +187,9 @@ function slapThemeOnDom(themeKey, isDark) {
     root.style.setProperty('--nav-bg', 'rgba(0, 0, 0, 0.05)');
     root.style.setProperty('--nav-border', 'rgba(0, 0, 0, 0.1)');
     
+//make pill readable in light mode
+
+    root.style.setProperty('--pill-color', theme.primary);
     // Gradients for light mode
 
 

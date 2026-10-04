@@ -9,6 +9,11 @@
 
 // this is the same copy pasted shit 
 
+
+
+
+
+
 const THEMES = {
   lavender: { name: "Lavender & Ash", accent: "#6D5BD0", accentSoft: "rgba(109,91,208,0.15)" },
   amber:    { name: "Amber & Onyx",   accent: "#F59E0B", accentSoft: "rgba(245,158,11,0.15)" },

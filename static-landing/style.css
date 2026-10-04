@@ -8,6 +8,7 @@
   
   --font: 'Manrope', system-ui, -apple-system, sans-serif;
 
+  --pill-color: #ffffff;
 
 
 
@@ -21,19 +22,15 @@
 
     /* --font: 'Manrope', system-ui, -apple-system, sans-serif; */
     
-
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                               
 }
-
-* {
+                                    
+* {      
   margin: 0;
-  padding: 0;
+  padding: 0;                
   box-sizing: border-box;
 }
-
-
-
-
 
 
 body {
@@ -354,7 +351,16 @@ a {
   border: 1px solid var(--nav-border);
   padding: 0.2rem 1rem;
   border-radius: 99px;
-  color: #fff;
+  /* color: #fff; */
+
+
+
+  /* pill-highlight color: white in dark , dark in light  */
+  color: var(--pill-color);
+  transition: color 0.3s ease, border-color 0.3s ease;
+
+
+
   font-weight: 500;
 }
 
@@ -403,7 +409,8 @@ a {
   align-items: center;
   gap: 0.4rem;
   margin-bottom: 0.5rem;
-}
+}                                         
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 
 .dot {
   width: 6px;
