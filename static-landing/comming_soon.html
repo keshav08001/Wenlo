@@ -85,16 +85,64 @@
       z-index: 0;
       pointer-events: none;
     }
+
+    /* Light mode overrides */
+    [data-theme="light"] .glass-card {
+      background: rgba(0, 0, 0, 0.03);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="light"] .glow-text {
+      background: linear-gradient(135deg, #1f2937 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    [data-theme="light"] .subtitle-text {
+      color: #475569;
+    }
+
+    [data-theme="light"] .back-btn {
+      background: #1f2937;
+      color: #ffffff;
+    }
+
+    [data-theme="light"] .back-btn:hover {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
   </style>
 </head>
 <body>
   <div class="bg-glow"></div>
   
-  <!-- theme controls so it doesn't break if themes.js runs -->
-  <div class="theme-controls" style="display: none;">
+  <!-- Theme Toggle Bottom Left -->
+  <div class="theme-controls">
+
+
+
     <div class="theme-toggle">
       <button id="btn-dark-mode" class="theme-btn active">Dark</button>
       <button id="btn-light-mode" class="theme-btn inactive">Light</button>
+    </div>
+
+    <div class="theme-picker">
+
+
+
+
+      <!-- These dots represent the chaos of choice -->
+      <button class="theme-picker-btn" data-theme="lavender" style="background: #6D5BD0;" title="Lavender & Ash">
+      </button>
+      <button class="theme-picker-btn" data-theme="amber" style="background: #F59E0B;" title="Amber & Onyx"></button>
+      <button class="theme-picker-btn" data-theme="sage" style="background: #636A51;" title="Sage & Wood"></button>
+      <button class="theme-picker-btn" data-theme="ocean" style="background: #3B82F6;" title="Ocean & Mist"></button>
+      <button class="theme-picker-btn" data-theme="charcoal" style="background: #64748B;"
+        title="Charcoal & Sand"></button>
+      <button class="theme-picker-btn" data-theme="red" style="background: #B91C1C;" title="Red & Ivory"></button>
+
+
+
     </div>
   </div>
 
