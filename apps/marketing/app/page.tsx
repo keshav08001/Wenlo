@@ -23,7 +23,7 @@ export default function Home() {
   return (
     // floating pill navbar -- looks cool 
 
-  <nav  class ="pill-nav" aria-label="Main-nav">
+  <nav  className ="pill-nav" aria-label="Main-nav">
 
 
     {/* settings icon 
@@ -42,21 +42,33 @@ export default function Home() {
 
 
 
-    <a href="#" class ="nav-link">
+    <a href="#" className ="nav-link">
       Features
     </a>
-    <a href="#" class ="nav-link">
+    <a href="#" className ="nav-link">
       Roadmap
     </a>
-    <a href="#" class ="nav-btn nav-btn-outline">
+    <a href="#" className ="nav-btn nav-btn-outline">
       Test Beta
     </a>
-    <a href="#" class ="nav-btn nav-btn-solid" id="nav-get-started">
+    <a href="#" className ="nav-btn nav-btn-solid" id="nav-get-started">
       Join waitlist
     </a>
 
 
   </nav>
+
+  // <div>
+  //   <div>
+
+  //   </div>
+  // </div>
+
+  // div not working wtf 
+
+
+
+
 
 
 

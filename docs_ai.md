@@ -70,3 +70,14 @@ animations for css and js
 
 like yeh idk what happed did a couple on my own like completely then started messing up and after 
 last weeks downtime i have just completely forgotten how to do them
+
+
+
+
+
+4 sep had to use ai to help me set up the app/marketing.file
+
+also for footer had it run trough my css and fix stuff
+
+
+
