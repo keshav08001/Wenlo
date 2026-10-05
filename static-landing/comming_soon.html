@@ -67,15 +67,30 @@
       }
     }
 
+
     .glow-text {
-      font-size: 4rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, var(--magic-gradient-start, #ffffff) 0%, var(--magic-gradient-end, #a5a5a5) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 1rem;
-      letter-spacing: -1px;
-    }
+    font-size: 4rem;
+    font-weight: 800;
+
+    background: linear-gradient(
+        135deg,
+        var(--magic-gradient-start, #ffffff) 0%,
+        var(--magic-gradient-end, #a5a5a5) 100%
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+
+
+
 
     .subtitle-text {
       color: var(--text-muted, #94a3b8);
