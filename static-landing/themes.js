@@ -119,9 +119,8 @@ function slapThemeOnDom(themeKey, isDark) {
   currentVibe = themeKey;
   isLivingInTheDark = isDark;
   
-
-
-
+  localStorage.setItem('wenlo-theme-vibe', themeKey);
+  localStorage.setItem('wenlo-theme-mode', isDark ? 'dark' : 'light');
 
   if (isDark) {
     root.setAttribute('data-theme', 'dark');
@@ -325,7 +324,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // Slap the initial theme on load
-  slapThemeOnDom('charcoal', true);
+  const savedVibe = localStorage.getItem('wenlo-theme-vibe') || 'charcoal';
+  const savedMode = localStorage.getItem('wenlo-theme-mode');
+  const initialDark = savedMode ? savedMode === 'dark' : true;
+  slapThemeOnDom(savedVibe, initialDark);
 
 
 

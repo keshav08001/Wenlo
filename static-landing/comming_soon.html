@@ -43,10 +43,10 @@
     }
 
     .glass-card {
-      background: rgba(255, 255, 255, 0.03);
+      background: var(--nav-bg, rgba(255, 255, 255, 0.03));
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--nav-border, rgba(255, 255, 255, 0.05));
       border-radius: 24px;
       padding: 4rem;
       max-width: 600px;
@@ -70,7 +70,7 @@
     .glow-text {
       font-size: 4rem;
       font-weight: 800;
-      background: linear-gradient(135deg, #ffffff 0%, #a5a5a5 100%);
+      background: linear-gradient(135deg, var(--magic-gradient-start, #ffffff) 0%, var(--magic-gradient-end, #a5a5a5) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 1rem;
@@ -89,8 +89,8 @@
       align-items: center;
       gap: 0.5rem;
       padding: 1rem 2rem;
-      background: #ffffff;
-      color: #000000;
+      background: var(--pill-color, #ffffff);
+      color: var(--bg, #000000);
       border-radius: 99px;
       font-weight: 600;
       transition: all 0.3s ease;
@@ -107,7 +107,8 @@
       position: absolute;
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, rgba(109, 91, 208, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+      background: radial-gradient(circle, var(--magic-gradient-start, rgba(109, 91, 208, 0.15)) 0%, transparent 70%);
+      opacity: 0.15;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -183,6 +184,11 @@
   </main>
 
   <script src="themes.js"></script>
+
+
+
+
 </body>
+
 
 </html>
