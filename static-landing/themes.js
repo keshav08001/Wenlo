@@ -29,6 +29,8 @@ const theBigBookOfThemes = {
     secondary: "#FFF7E6",
     accent: "#F59E0B",
 
+    //for wenlo light mode
+    "pill-color": "#F59E0B",      
 
     vibe: "Bold. Confident. Drinks black coffee."
   },
@@ -132,10 +134,7 @@ function slapThemeOnDom(themeKey, isDark) {
 
 
 
-
-
 // ALL ROADS LEAD TO ROME
-
 
 
 
@@ -181,8 +180,6 @@ function slapThemeOnDom(themeKey, isDark) {
 
     root.style.setProperty('--text-muted', theme.accent);
 
-
-
     root.style.setProperty('--nav-bg', 'rgba(0, 0, 0, 0.05)');
     root.style.setProperty('--nav-border', 'rgba(0, 0, 0, 0.1)');
     
@@ -216,16 +213,10 @@ function slapThemeOnDom(themeKey, isDark) {
 
     lightBtn.classList.remove('active');
   } 
-  
 
 
 
 
-
-
-
-  
-  
   else {
     lightBtn.classList.add('active');
 
