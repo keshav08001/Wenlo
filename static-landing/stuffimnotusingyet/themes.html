@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 
 <head>
@@ -11,7 +11,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
+  <style> -->
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -26,35 +36,7 @@
       --surface: rgba(255, 255, 255, 0.03);
       --line: rgba(255, 255, 255, 0.09);
     }
-    
-    [data-theme="light"] {
-      --surface: rgba(0, 0, 0, 0.05);
-      --line: rgba(0, 0, 0, 0.1);
-    }
-
-    .themes-container {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      position: relative;
-      z-index: 10;
-      padding: 4rem 2rem;
-      max-width: 1040px;
-      margin: 0 auto;
-    }
-
-    .bg-glow {
-      position: absolute;
-      width: 800px;
-      height: 800px;
-      background: radial-gradient(circle, var(--magic-gradient-start, rgba(109, 91, 208, 0.15)) 0%, transparent 70%);
-      opacity: 0.15;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 0;
-      pointer-events: none;
-    }
+    \
 
 
 
@@ -119,42 +101,6 @@
 
 
 
-
-
-    /* Live Preview Section */
-    .live {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 0;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      overflow: hidden;
-      margin-bottom: 26px;
-      transition: background .35s;
-      backdrop-filter: blur(20px);
-      z-index: 1;
-    }
-    .live .copy {
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 30px;
-    }
-    .live .copy small {
-      color: var(--text-muted);
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .live .copy h2 {
-      margin: 6px 0 0;
-      font-size: clamp(26px, 4vw, 40px);
-      letter-spacing: -.02em;
-      font-weight: 800;
-      line-height: 1.05;
     }
     .live .copy p {
       margin: 10px 0 0;
@@ -245,46 +191,7 @@
     }
     .mini .mn u {
       margin-top: auto;
-      align-self: flex-start;
-      height: 16px;
-      width: 46px;
-      border-radius: 5px;
-      background: var(--a1, var(--pill-color));
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /* Cards Grid */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      align-items: stretch;
-      z-index: 1;
-      margin-bottom: 3rem;
-    }
-    .card {
-      all: unset;
-      box-sizing: border-box;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      background: var(--c-surface);
-      color: var(--c-text);
-      border: 1px solid var(--c-line);
-      border-radius: 16px;
-      padding: 14px 14px 18px;
-      transition: transform .18s, border-color .18s;
+    .18s;
       position: relative;
     }
     .card:hover {
@@ -312,80 +219,7 @@
     .card .mini .mn b { background: var(--c-text); }
     .card .mini .mn i { background: var(--c-muted); }
     .card .mini .mn u { background: var(--c-a1); }
-    .card h3 {
-      margin: 0 4px;
-      font-size: 19px;
-      font-weight: 600;
-      letter-spacing: -.01em;
-    }
-    .card p {
-      margin: 4px 4px 0;
-      font-size: 14px;
-      line-height: 1.45;
-      color: var(--c-muted);
-    }
-    .card .tick {
-      position: absolute;
-      top: 22px;
-      right: 22px;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--c-a1);
-      color: var(--c-bg);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      font-weight: 800;
-    }
-    .card[aria-checked=true] .tick {
-      display: flex;
-    }
 
-    .coming-soon-card {
-      grid-column: 1 / -1;
-      justify-self: center;
-      width: 100%;
-      max-width: 320px;
-      border-style: dashed !important;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      opacity: 0.7;
-      cursor: default;
-      background: transparent !important;
-      text-align: center;
-      padding: 30px;
-    }
-
-    .coming-soon-card:hover {
-      transform: none;
-      border-color: inherit;
-    }
-
-    .back-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 1rem 2rem;
-      background: var(--pill-color, #ffffff);
-      color: var(--bg, #000000);
-      border-radius: 99px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      margin: 0 auto;
-      z-index: 1;
-    }
-    .back-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    }
-
-    @media (max-width: 820px) {
-      .grid { grid-template-columns: repeat(2, 1fr); }
       .live { grid-template-columns: 1fr; }
     }
     @media (max-width: 520px) {
@@ -435,35 +269,7 @@
       </div>
       <div class="stage">
         <div class="mini">
-          <div class="sb"><b></b><b></b><b></b><b></b></div>
-          <div class="mn"><b></b><i></i><i style="width:80%"></i><i style="width:65%"></i><u></u></div>
-        </div>
-      </div>
-    </section>
-
-    <div class="grid" id="grid" role="radiogroup" aria-label="Themes">
-      <!-- Cards injected by JS -->
-    </div>
-
-    <a href="index.html" class="back-btn">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round">
-        <line x1="19" y1="12" x2="5" y2="12"></line>
-        <polyline points="12 19 5 12 12 5"></polyline>
-      </svg>
-      Return Home
-    </a>
-  </main>
-
-  <script src="themes.js"></script>
-  <script>
-    // Claude's specific colors for the mini previews
-    var T = [
-      {n: "Lavender & Ash", d: "Soft and elegant. Probably smells nice.",
-       dk: {bg: "#14121a", s: "#1d1a27", t: "#ece8f5", m: "#9a93ad", a: "#8f78ef", b: "#2b2542"},
-       lt: {bg: "#f3f0f8", s: "#ffffff", t: "#231d33", m: "#6b6380", a: "#5a47b8", b: "#d9d0f0"}},
-      {n: "Amber & Onyx", d: "Bold and confident. Drinks black coffee.",
-       dk: {bg: "#0f1114", s: "#181b20", t: "#f1ece2", m: "#98958b", a: "#e8a33d", b: "#2a3142"},
+       e2", m: "#98958b", a: "#e8a33d", b: "#2a3142"},
        lt: {bg: "#f6f1e6", s: "#fffdf8", t: "#1d1a14", m: "#6f6a5c", a: "#c27d12", b: "#e7d9b8"}},
       {n: "Sage & Wood", d: "Earth mother. Owns 14 plants.",
        dk: {bg: "#12140f", s: "#1b1e17", t: "#e9ebe0", m: "#959a85", a: "#8fa078", b: "#3b3a2c"},
@@ -514,30 +320,7 @@
       var k = mode === "dark" ? "dk" : "lt", p = T[cur][k], r = document.documentElement;
       
       // Update our custom Claude CSS vars for the preview UI
-      var styleString = vars(p, false);
-      // We append it to the document body to not override the global theme classes set by themes.js on root
-      document.body.setAttribute("style", styleString);
-
-      document.querySelectorAll(".card:not(.coming-soon-card)").forEach(function(c, i) {
-        var q = T[i][k];
-        c.setAttribute("style", vars(q, true));
-        c.setAttribute("aria-checked", i === cur ? "true" : "false");
-      });
-      
-      document.getElementById("cur-name").textContent = T[cur].n;
-      document.getElementById("cur-desc").textContent = T[cur].d;
-      document.getElementById("cur-sw").innerHTML = '<i style="background:'+p.a+'"></i><i style="background:'+p.b+'"></i><i style="background:'+p.s+'"></i>';
-      document.getElementById("m-dark").setAttribute("aria-pressed", mode === "dark");
-      document.getElementById("m-light").setAttribute("aria-pressed", mode === "light");
-    }
-
-    document.getElementById("m-dark").onclick = function() {
-      mode = "dark";
-      applyLocalUI();
-      slapThemeOnDom(themeKeys[cur], true);
-    };
-    
-    document.getElementById("m-light").onclick = function() {
+      var styleSnction() {
       mode = "light";
       applyLocalUI();
       slapThemeOnDom(themeKeys[cur], false);

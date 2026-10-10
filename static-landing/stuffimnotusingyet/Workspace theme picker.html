@@ -7,37 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0f1114;--surface:#181b20;--text:#f1ece2;--muted:#98958b;--a1:#e8a33d;--a2:#2a3142;--line:rgba(255,255,255,.09);
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-*,*::before,*::after{box-sizing:inherit}
-body{margin:0;background:var(--bg);color:var(--text);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;transition:background .35s,color .35s;min-height:100vh}
-.wrap{max-width:1040px;margin:0 auto;padding:44px 22px 56px}
-header{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:flex-end;justify-content:space-between;margin-bottom:30px}
-h1{font-size:clamp(34px,6vw,60px);line-height:.98;font-weight:800;letter-spacing:-.03em;margin:0;max-width:11ch}
-header p{margin:0;max-width:34ch;color:var(--muted);font-size:16px;line-height:1.5}
-.toggle{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px}
-.toggle button{font:inherit;font-size:14px;border:0;background:none;color:var(--muted);padding:8px 18px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s}
-.toggle button[aria-pressed=true]{background:var(--a1);color:var(--bg);font-weight:600}
-button:focus-visible{outline:2px solid var(--a1);outline-offset:3px}
-.live{display:grid;grid-template-columns:1.1fr 1fr;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;margin-bottom:26px;transition:background .35s}
-.live .copy{padding:30px;display:flex;flex-direction:column;justify-content:space-between;gap:30px}
-.live .copy small{color:var(--muted);font-size:14px}
-.live .copy h2{margin:6px 0 0;font-size:clamp(26px,4vw,40px);letter-spacing:-.02em;font-weight:800;line-height:1.05}
-.live .copy p{margin:10px 0 0;color:var(--muted);max-width:32ch;line-height:1.5}
-.live .copy .sw{display:flex;gap:8px}
-.live .copy .sw i{width:30px;height:30px;border-radius:50%;border:1px solid var(--line)}
-.stage{background:var(--a2);padding:26px;display:flex;align-items:center;justify-content:center;transition:background .35s}
-.mini{width:100%;max-width:340px;aspect-ratio:16/10;border-radius:10px;background:var(--bg);display:grid;grid-template-columns:28% 1fr;overflow:hidden;box-shadow:0 18px 40px -18px rgba(0,0,0,.6);transition:background .35s}
-.mini .sb{background:var(--surface);padding:10px 8px;display:flex;flex-direction:column;gap:6px}
-.mini .sb b{height:6px;border-radius:3px;background:var(--muted);opacity:.35}
-.mini .sb b:first-child{background:var(--a1);opacity:1;width:60%}
-.mini .mn{padding:12px;display:flex;flex-direction:column;gap:7px}
-.mini .mn b{height:7px;border-radius:3px;background:var(--text);opacity:.85;width:55%}
-.mini .mn i{height:5px;border-radius:3px;background:var(--muted);opacity:.4;display:block}
-.mini .mn u{margin-top:auto;align-self:flex-start;height:16px;width:46px;border-radius:5px;background:var(--a1)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+<stys:stretch}
 .card{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-line);border-radius:16px;padding:14px 14px 18px;transition:transform .18s,border-color .18s;position:relative}
 .card:hover{transform:translateY(-3px);border-color:var(--c-a1)}
 .card:focus-visible{outline:2px solid var(--c-a1);outline-offset:3px}
@@ -67,44 +37,7 @@ button:focus-visible{outline:2px solid var(--a1);outline-offset:3px}
 <p>Six palettes, each shown as it will actually look. Pick one and the whole page changes.</p>
 <div class="toggle" role="group" aria-label="Mode">
 <button id="m-dark" aria-pressed="true">Dark</button>
-<button id="m-light" aria-pressed="false">Light</button>
-</div>
-</header>
-
-<section class="live" aria-live="polite">
-<div class="copy">
-<div><small>Current theme</small><h2 id="cur-name"></h2><p id="cur-desc"></p></div>
-<div class="sw" id="cur-sw"></div>
-</div>
-<div class="stage"><div class="mini"><div class="sb"><b></b><b></b><b></b><b></b></div><div class="mn"><b></b><i></i><i style="width:80%"></i><i style="width:65%"></i><u></u></div></div></div>
-</section>
-
-<div class="grid" id="grid" role="radiogroup" aria-label="Themes"></div>
-<p class="foot">Missing your palette? <button id="suggest">Suggest a theme</button> <span id="note"></span></p>
-</div>
-
-<script>
-var T=[
-{n:"Lavender & Ash",d:"Soft and elegant. Probably smells nice.",
- dk:{bg:"#14121a",s:"#1d1a27",t:"#ece8f5",m:"#9a93ad",a:"#8f78ef",b:"#2b2542"},
- lt:{bg:"#f3f0f8",s:"#ffffff",t:"#231d33",m:"#6b6380",a:"#5a47b8",b:"#d9d0f0"}},
-{n:"Amber & Onyx",d:"Bold and confident. Drinks black coffee.",
- dk:{bg:"#0f1114",s:"#181b20",t:"#f1ece2",m:"#98958b",a:"#e8a33d",b:"#2a3142"},
- lt:{bg:"#f6f1e6",s:"#fffdf8",t:"#1d1a14",m:"#6f6a5c",a:"#c27d12",b:"#e7d9b8"}},
-{n:"Sage & Wood",d:"Earth mother. Owns 14 plants.",
- dk:{bg:"#12140f",s:"#1b1e17",t:"#e9ebe0",m:"#959a85",a:"#8fa078",b:"#3b3a2c"},
- lt:{bg:"#eef0e6",s:"#fafbf5",t:"#20241a",m:"#666d57",a:"#5f7050",b:"#d5d9c2"}},
-{n:"Ocean & Mist",d:"Clean and focused. Slightly wet.",
- dk:{bg:"#0b1220",s:"#121b2e",t:"#e6eefc",m:"#8a9ab8",a:"#4a82f0",b:"#1c2c5c"},
- lt:{bg:"#eaf1fb",s:"#ffffff",t:"#0f1b33",m:"#5a6a87",a:"#2f6be0",b:"#c9dafb"}},
-{n:"Charcoal & Sand",d:"Modern, minimal, not for grilling.",
- dk:{bg:"#121315",s:"#1b1c1f",t:"#ece9e2",m:"#96938a",a:"#c9b99a",b:"#2c2f38"},
- lt:{bg:"#f1eee8",s:"#fcfbf8",t:"#1c1c1e",m:"#6a675f",a:"#8f7c58",b:"#ddd5c4"}},
-{n:"Red & Ivory",d:"Spicy and energetic. Will fight you.",
- dk:{bg:"#160f0f",s:"#211616",t:"#f6eee3",m:"#a89489",a:"#e0524a",b:"#4a1d1b"},
- lt:{bg:"#f8f1e6",s:"#fffaf1",t:"#2a1512",m:"#7a625a",a:"#b3261e",b:"#f1c9c4"}}
-];
-var mode="dark",cur=1;
+<button id="m-light" aria-pressed="fal
 try{var sm=localStorage.getItem("tp-mode"),sc=localStorage.getItem("tp-theme");
  if(sm==="light"||sm==="dark")mode=sm;else if(window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)mode="light";
  if(sc!==null&&T[+sc])cur=+sc;}catch(e){}
