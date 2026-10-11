@@ -66,7 +66,7 @@ Missing things to be added:
  -->
 
 
-
+                                                                                                                   
 29th sep - wed
 
 ai usage:
@@ -77,8 +77,26 @@ oke so needed a lot of help for js and css of dashboard also cuz of time constra
 animations for css and js
 
 like yeh idk what happed did a couple on my own like completely then started messing up and after 
+
+
 last weeks downtime i have just completely forgotten how to do them
 
+
+
+
+documentation: https://designerup.co/blog/i-studied-the-ux-ui-of-over-200-onboarding-flows-heres-everything-i-learned/
+
+alright so a lot of things to add 
+ 1) used claude help with the footer the back watermark 
+ 2) tried to use claude to make me a good themes page and user suggestion
+    lokkes sooo bad decided against it
+
+    https://jsontotable.org/html-to-tsx
+
+
+
+tried using google stich worked meh
+ then went on to use claude ui editor (opens in chat) - works a lot better but still would prefer stich in the future more refined and got a good result with it dureing the hackathon
 
 
 

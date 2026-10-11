@@ -12,6 +12,8 @@
 
 
 
+
+
 const theBigBookOfThemes = {
   lavender: {
     name: "Lavender & Ash",
@@ -42,7 +44,7 @@ const theBigBookOfThemes = {
     accent: "#8E6847",
 
 
-    vibe: "Earth mother. Does yoga. Owns 14 plants."
+    vibe: "Earthhy af. Owns 14 plants."
     // cat lady vibe 
   },
 
@@ -54,6 +56,7 @@ const theBigBookOfThemes = {
 
 
     vibe: "Clean, focused, slightly wet."
+    // watched this weird ahh real like the amt of floors you climb  .. u get progressively wetter or sum shit 
   },
 
 
@@ -65,7 +68,7 @@ const theBigBookOfThemes = {
     accent: "#64748B",
 
 
-    vibe: "Modern, minimal, not for grilling."
+    vibe: "Modern, minimal."
   },
 
 
@@ -155,6 +158,10 @@ function slapThemeOnDom(themeKey, isDark) {
 
 //pill stays white in dark mode
 
+
+
+
+
     root.style.setProperty('--pill-color', '#ffffff');
 
     // We'll use primary for the gradient and accents in dark mode
@@ -162,35 +169,37 @@ function slapThemeOnDom(themeKey, isDark) {
 
 
     root.style.setProperty('--magic-gradient-start', theme.primary);
-
-
-
     root.style.setProperty('--magic-gradient-end', theme.accent);
+
+    // Feature section theme variables
+    root.style.setProperty('--feature-accent', themeKey === 'charcoal' ? '#9f75ff' : (theme.accent || '#9f75ff'));
+    root.style.setProperty('--feature-card-bg', '#111216');
+    root.style.setProperty('--feature-card-border', 'rgba(255, 255, 255, 0.08)');
+    root.style.setProperty('--feature-title-color', '#ffffff');
+    root.style.setProperty('--feature-text-color', '#ffffff');
+    root.style.setProperty('--feature-muted-color', '#94a3b8');
   } else {
     root.setAttribute('data-theme', 'light');
 
-
-
-
     // Light Mode: Background is secondary (light), text is primary (dark)
-
-
     root.style.setProperty('--bg', theme.secondary);
     root.style.setProperty('--text', theme.primary);
-
     root.style.setProperty('--text-muted', theme.accent);
-
     root.style.setProperty('--nav-bg', 'rgba(0, 0, 0, 0.05)');
     root.style.setProperty('--nav-border', 'rgba(0, 0, 0, 0.1)');
-    
-//make pill readable in light mode
-
     root.style.setProperty('--pill-color', theme.primary);
+
     // Gradients for light mode
-
-
     root.style.setProperty('--magic-gradient-start', theme.primary);
     root.style.setProperty('--magic-gradient-end', theme.accent);
+
+    // Feature section theme variables for light mode
+    root.style.setProperty('--feature-accent', themeKey === 'charcoal' ? '#7c3aed' : (theme.primary || '#7c3aed'));
+    root.style.setProperty('--feature-card-bg', '#ffffff');
+    root.style.setProperty('--feature-card-border', 'rgba(0, 0, 0, 0.08)');
+    root.style.setProperty('--feature-title-color', theme.primary || '#111827');
+    root.style.setProperty('--feature-text-color', theme.primary || '#111827');
+    root.style.setProperty('--feature-muted-color', '#64748b');
   }
   
 
@@ -287,6 +296,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
 

@@ -10,6 +10,7 @@
 
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="features.css">
   <!-- <link rel="stylesheet" href="onboarding.css"> -->
 
   <!-- font thingy -- had to lean how to do this  -->
@@ -37,6 +38,8 @@
   <div class="nav-wrapper">
     <nav class="pill-nav" aria-label="Main-nav">
       <!-- settings icon  -->
+
+
 
       <!-- <div class="nav-icon">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -205,14 +208,315 @@
 
   </main>
 
+  <!-- featur - code -statrtin here -->
   <!-- Features Section -->
-  <section id="features" class="landing-section" style="display: flex; align-items: center; justify-content: center; min-height: 40vh;">
-    <h2 class="section-title" style="font-size: 4rem; margin: 0;">Features <span class="pill-highlight">(coming soon)</span></h2>
+  <section id="features">
+    <div class="features-header">
+      <h2 class="section-title">Everything in sync. Nothing slipping through.</h2>
+      <p>Your tasks, projects, deadlines, and focus sessions. All working together in one place.</p>
+    </div>
+
+    <div class="bento-grid">
+      <!-- 1. Task Management -->
+      <div class="bento-card card-primary">
+        <h3 class="card-title">
+          <span class="purple-text">Every task</span> has its<br>place.
+        </h3>
+        <div class="task-rows">
+          <div class="task-row" id="task-row-1">
+            <div class="task-row-left">
+              <div class="task-checkbox" aria-label="Toggle task">
+                <svg class="check-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span class="task-title">Finalize Q3 roadmap</span>
+            </div>
+            <div class="task-row-right">
+              <span class="badge badge-p1">P1</span>
+              <span class="badge badge-subtle">In Progress</span>
+              <span class="badge badge-date">Oct 12</span>
+            </div>
+          </div>
+          <div class="task-row" id="task-row-2">
+            <div class="task-row-left">
+              <div class="task-checkbox" aria-label="Toggle task">
+                <svg class="check-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span class="task-title">Review design system updates</span>
+            </div>
+            <div class="task-row-right">
+              <span class="badge badge-p2">P2</span>
+              <span class="badge badge-subtle">To Do</span>
+              <span class="badge badge-date">Oct 14</span>
+            </div>
+          </div>
+          <div class="task-row checked" id="task-row-3">
+            <div class="task-row-left">
+              <div class="task-checkbox checked" aria-label="Toggle task">
+                <svg class="check-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span class="task-title strike">Draft API specifications</span>
+            </div>
+            <div class="task-row-right">
+              <span class="badge badge-subtle">Completed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Views & Smart Lists (Tall Right Card) -->
+      <div class="bento-card card-views">
+        <h3 class="card-title">
+          <span class="purple-text">See work</span> your way.
+        </h3>
+
+        <div class="views-capsule-switcher">
+          <button class="views-pill-btn active" id="tab-list">List</button>
+          <button class="views-pill-btn" id="tab-kanban">Kanban</button>
+        </div>
+
+        <div class="perspectives-list-view" id="view-list">
+          <div class="perspective-group">
+            <div class="perspective-group-header">
+              <span class="group-name">Today</span>
+              <span class="group-date">Oct 11</span>
+            </div>
+            <div class="skeleton-items">
+              <div class="skeleton-item">
+                <span class="task-status-dot dot-red"></span>
+                <span class="skeleton-bar" style="width: 140px;"></span>
+              </div>
+              <div class="skeleton-item">
+                <span class="task-status-dot dot-orange"></span>
+                <span class="skeleton-bar" style="width: 95px;"></span>
+              </div>
+              <div class="skeleton-item">
+                <span class="task-status-dot dot-green"></span>
+                <span class="skeleton-bar" style="width: 115px;"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="perspective-group" style="margin-top: 1.75rem;">
+            <div class="perspective-group-header">
+              <span class="group-name">Upcoming</span>
+              <span class="group-date">Oct 12 onward</span>
+            </div>
+            <div class="skeleton-items">
+              <div class="skeleton-item">
+                <span class="task-status-dot dot-blue"></span>
+                <span class="skeleton-bar" style="width: 130px;"></span>
+              </div>
+              <div class="skeleton-item">
+                <span class="task-status-dot dot-orange"></span>
+                <span class="skeleton-bar" style="width: 90px;"></span>
+              </div>
+              <div class="skeleton-item">
+                <span class="task-status-dot dot-purple"></span>
+                <span class="skeleton-bar" style="width: 110px;"></span>
+              </div>
+              <div class="skeleton-item">
+                <span class="task-status-dot dot-green"></span>
+                <span class="skeleton-bar" style="width: 75px;"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Actual Kanban View -->
+        <div class="perspectives-kanban-view" id="view-kanban" style="display: none;">
+          <!-- Column 1: To Do -->
+          <div class="kanban-col">
+            <div class="kanban-col-header">
+              <span class="kanban-col-title">To Do</span>
+              <span class="kanban-col-count">2</span>
+            </div>
+            <div class="kanban-cards">
+              <div class="kanban-card">
+                <div class="kanban-card-top">
+                  <span class="badge badge-p1">P1</span>
+                </div>
+                <h4 class="kanban-card-title">Refine Bento layout</h4>
+                <div class="kanban-card-meta">
+                  <span class="kanban-date">Oct 14</span>
+                  <img src="assets/bob-pfp.png" alt="Bob" class="kanban-avatar" />
+                </div>
+              </div>
+              <div class="kanban-card">
+                <div class="kanban-card-top">
+                  <span class="badge badge-subtle">Specs</span>
+                </div>
+                <h4 class="kanban-card-title">OAuth refresh</h4>
+                <div class="kanban-card-meta">
+                  <span class="kanban-date">Oct 16</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: In Progress -->
+          <div class="kanban-col">
+            <div class="kanban-col-header">
+              <span class="kanban-col-title">In Dev</span>
+              <span class="kanban-col-count active">2</span>
+            </div>
+            <div class="kanban-cards">
+              <div class="kanban-card card-accent-border">
+                <div class="kanban-card-top">
+                  <span class="badge badge-theme-accent">Focus</span>
+                </div>
+                <h4 class="kanban-card-title">Pomodoro sync</h4>
+                <div class="kanban-card-meta">
+                  <span class="kanban-date">Today</span>
+                  <img src="assets/nitish-pfp.png" alt="Nitish" class="kanban-avatar" />
+                </div>
+              </div>
+              <div class="kanban-card">
+                <div class="kanban-card-top">
+                  <span class="badge badge-p2">P2</span>
+                </div>
+                <h4 class="kanban-card-title">Theme palette</h4>
+                <div class="kanban-card-meta">
+                  <span class="kanban-date">Oct 13</span>
+                  <img src="assets/bob-pfp.png" alt="Bob" class="kanban-avatar" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Done -->
+          <div class="kanban-col">
+            <div class="kanban-col-header">
+              <span class="kanban-col-title">Done</span>
+              <span class="kanban-col-count done">✓ 2</span>
+            </div>
+            <div class="kanban-cards">
+              <div class="kanban-card done-card">
+                <div class="kanban-card-top">
+                  <span class="badge badge-done">Done</span>
+                </div>
+                <h4 class="kanban-card-title strike">iOS toggle switch</h4>
+                <div class="kanban-card-meta">
+                  <span class="kanban-date">Oct 11</span>
+                  <img src="assets/nitish-pfp.png" alt="Nitish" class="kanban-avatar" />
+                </div>
+              </div>
+              <div class="kanban-card done-card">
+                <div class="kanban-card-top">
+                  <span class="badge badge-done">Done</span>
+                </div>
+                <h4 class="kanban-card-title strike">Checklist UI</h4>
+                <div class="kanban-card-meta">
+                  <span class="kanban-date">Oct 10</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Projects, Teams & Permissions -->
+      <div class="bento-card card-teams">
+        <h3 class="card-title">
+          <span class="purple-text">The right people.</span> The<br>right work.
+        </h3>
+        <div class="team-list">
+          <div class="team-member-item">
+            <div class="team-member-left">
+              <img src="assets/nitish-pfp.png" alt="Nitish" class="member-avatar-img" />
+              <div class="member-text">
+                <span class="member-name">Nitish</span>
+                <span class="member-sub">(Owner)</span>
+              </div>
+            </div>
+            <span class="badge badge-access">Full Access</span>
+          </div>
+          <div class="team-member-item">
+            <div class="team-member-left">
+              <img src="assets/bob-pfp.png" alt="Bob" class="member-avatar-img" />
+              <div class="member-text">
+                <span class="member-name">Bob</span>
+                <span class="member-sub">(Member)</span>
+              </div>
+            </div>
+            <span class="badge badge-access restricted">Restricted</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Deadline Management -->
+      <div class="bento-card card-deadlines">
+        <h3 class="card-title">
+          <span class="purple-text">Deadlines</span> are conversations.
+        </h3>
+        <div class="deadline-negotiate-box">
+          <div class="deadline-row-top">
+            <div class="deadline-shift-display">
+              <div class="date-stack date-old">
+                <span>Oct</span>
+                <span>12</span>
+              </div>
+              <span class="shift-arrow">→</span>
+              <div class="date-stack date-new">
+                <span>Oct</span>
+                <span>15</span>
+              </div>
+            </div>
+            <button class="ios-switch-toggle active" id="deadline-switch" type="button" role="switch" aria-checked="true" aria-label="Toggle deadline approval" title="Toggle approval">
+              <span class="ios-switch-thumb"></span>
+            </button>
+          </div>
+          <p class="deadline-quote">"Need more time for QA testing."</p>
+        </div>
+      </div>
+
+      <!-- 5. Focus & Personalization (Centered Bottom) -->
+      <div class="bento-card card-focus">
+        <h3 class="card-title focus-heading">
+          <span class="purple-text">Make time for</span> <span class="capsule-heading">what matters.</span>
+        </h3>
+        <div class="mock-focus">
+          <div class="pomodoro-header">
+            <span class="pomodoro-title">Pomodoro</span>
+            <span class="pomodoro-badge">FOCUS</span>
+          </div>
+
+          <!-- Pill Pomodoro Timer Capsule matching screenshot -->
+          <div class="pomodoro-capsule" id="pomodoro-capsule">
+            <div class="pomodoro-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="pomodoro-time" id="mock-timer">00:25:00</div>
+            <button class="pomodoro-btn" id="btn-timer" aria-label="Toggle Pomodoro Timer" title="Start / Pause">
+              <svg class="icon-play" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="6 3 20 12 6 21 6 3"></polygon>
+              </svg>
+              <svg class="icon-pause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"
+                style="display: none;">
+                <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+                <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Roadmap Section -->
-  <section id="roadmap" class="landing-section" style="display: flex; align-items: center; justify-content: center; min-height: 40vh;">
-    <h2 class="section-title" style="font-size: 4rem; margin: 0;">Roadmap <span class="pill-highlight">(being paved)</span></h2>
+  <section id="roadmap" class="landing-section"
+    style="display: flex; align-items: center; justify-content: center; min-height: 40vh;">
+    <h2 class="section-title" style="font-size: 4rem; margin: 0;">Roadmap <span class="pill-highlight">(being
+        paved)</span></h2>
   </section>
 
   <footer class="wenlo-footer" id="site-footer">
@@ -286,6 +590,10 @@
 
 
 
+
+
+
+
             <li><a href="comming_soon.html">Security</a></li>
           </ul>
         </div>
@@ -317,11 +625,16 @@
       </div>
     </div>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
-  </footer>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+    <!-- Copyright bottom right (no bottom bar) -->
+    <div class="footer-copyright">
+      &copy; 2026 wenlo.todo
+    </div>
+
+
+  </footer>
 
   <script src="themes.js"></script>
-  
+
   <script>
     const emailInput = document.getElementById('waitlist-email-input');
     const submitBtn = document.getElementById('waitlist-submit-btn');
@@ -349,7 +662,7 @@
     });
 
     // Smooth scroll for waitlist button
-    document.getElementById('nav-get-started').addEventListener('click', function(e) {
+    document.getElementById('nav-get-started').addEventListener('click', function (e) {
       const target = document.getElementById('newsletter-form');
       if (target) {
         e.preventDefault();
@@ -357,8 +670,119 @@
         setTimeout(() => emailInput.focus(), 800);
       }
     });
+
+
+
+
+
+
+
+
+    // --- Features Section Mock Interactions ---
+
+
+
+
+
+
+
+    // 1. Task Checkbox & Row Toggle
+    const taskRows = document.querySelectorAll('.task-row');
+    taskRows.forEach(row => {
+      row.addEventListener('click', () => {
+        const checkbox = row.querySelector('.task-checkbox');
+        const title = row.querySelector('.task-title');
+        const isNowChecked = row.classList.toggle('checked');
+        if (checkbox) {
+          checkbox.classList.toggle('checked', isNowChecked);
+        }
+        if (title) {
+          title.classList.toggle('strike', isNowChecked);
+        }
+      });
+    });
+
+    // 2. Views Tab Switcher (List <-> Kanban)
+    const tabList = document.getElementById('tab-list');
+    const tabKanban = document.getElementById('tab-kanban');
+    const viewList = document.getElementById('view-list');
+    const viewKanban = document.getElementById('view-kanban');
+
+    if (tabList && tabKanban) {
+      tabList.addEventListener('click', () => {
+        tabList.classList.add('active');
+        tabKanban.classList.remove('active');
+        if (viewList) viewList.style.display = 'block';
+        if (viewKanban) viewKanban.style.display = 'none';
+      });
+      tabKanban.addEventListener('click', () => {
+        tabKanban.classList.add('active');
+        tabList.classList.remove('active');
+        if (viewList) viewList.style.display = 'none';
+        if (viewKanban) viewKanban.style.display = 'grid';
+      });
+    }
+
+    // 4. Deadline Approval Switch (Theme-responsive iOS Toggle)
+    const deadlineSwitch = document.getElementById('deadline-switch');
+
+    if (deadlineSwitch) {
+      deadlineSwitch.addEventListener('click', () => {
+        const isApproved = deadlineSwitch.classList.toggle('active');
+        deadlineSwitch.setAttribute('aria-checked', isApproved ? 'true' : 'false');
+      });
+    }
+
+    // 5. Timer toggle
+    const btnTimer = document.getElementById('btn-timer');
+    const timerDisplay = document.getElementById('mock-timer');
+    const pomodoroCapsule = document.getElementById('pomodoro-capsule');
+    let timerInterval = null;
+    let secondsLeft = 25 * 60; // 25:00 default Pomodoro focus duration
+
+    function formatTime(totalSeconds) {
+      const h = Math.floor(totalSeconds / 3600);
+      const m = Math.floor((totalSeconds % 3600) / 60);
+      const s = totalSeconds % 60;
+      return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+    }
+
+    if (btnTimer && timerDisplay) {
+      const iconPlay = btnTimer.querySelector('.icon-play');
+      const iconPause = btnTimer.querySelector('.icon-pause');
+
+      btnTimer.addEventListener('click', () => {
+        if (timerInterval) {
+          // Pause
+          clearInterval(timerInterval);
+          timerInterval = null;
+          if (iconPlay) iconPlay.style.display = 'block';
+          if (iconPause) iconPause.style.display = 'none';
+          if (pomodoroCapsule) pomodoroCapsule.classList.remove('is-running');
+        } else {
+          // Start
+          if (iconPlay) iconPlay.style.display = 'none';
+          if (iconPause) iconPause.style.display = 'block';
+          if (pomodoroCapsule) pomodoroCapsule.classList.add('is-running');
+
+          timerInterval = setInterval(() => {
+            if (secondsLeft > 0) {
+              secondsLeft--;
+              timerDisplay.textContent = formatTime(secondsLeft);
+            } else {
+              clearInterval(timerInterval);
+              timerInterval = null;
+              if (iconPlay) iconPlay.style.display = 'block';
+              if (iconPause) iconPause.style.display = 'none';
+              if (pomodoroCapsule) pomodoroCapsule.classList.remove('is-running');
+              secondsLeft = 25 * 60;
+              timerDisplay.textContent = formatTime(secondsLeft);
+            }
+          }, 1000);
+        }
+      });
+    }
   </script>
 </body>
 
 </html>
-

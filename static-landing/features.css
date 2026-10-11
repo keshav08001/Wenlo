@@ -1,0 +1,901 @@
+/* =========================================================
+   Wenlo Features Section - Theme & Mode Responsive
+   ========================================================= */
+
+:root {
+  --feature-card-bg: #111216;
+  --feature-card-border: rgba(255, 255, 255, 0.08);
+  --feature-card-shadow: none;
+  --feature-title-color: #ffffff;
+  --feature-text-color: #ffffff;
+  --feature-muted-color: #94a3b8;
+  --feature-accent: #9f75ff;
+  --feature-subtle-bg: rgba(255, 255, 255, 0.05);
+  --feature-border-subtle: rgba(255, 255, 255, 0.04);
+  --feature-capsule-bg: rgba(0, 0, 0, 0.5);
+  --feature-capsule-border: rgba(255, 255, 255, 0.08);
+  --feature-tab-active-bg: rgba(255, 255, 255, 0.1);
+  --feature-tab-active-color: #ffffff;
+  --feature-tab-inactive-color: var(--feature-accent, #9f75ff);
+  --feature-btn-bg: #ffffff;
+  --feature-btn-text: #000000;
+  --feature-reject-bg: rgba(255, 255, 255, 0.04);
+  --feature-reject-border: rgba(255, 255, 255, 0.08);
+  --feature-reject-color: #9ca3af;
+  --feature-skeleton-bg: rgba(255, 255, 255, 0.08);
+  --feature-badge-date-bg: rgba(99, 102, 241, 0.12);
+  --feature-badge-date-color: #818cf8;
+  --feature-pomodoro-capsule-bg: rgba(255, 255, 255, 0.04);
+  --feature-pomodoro-capsule-border: rgba(255, 255, 255, 0.12);
+  --feature-pomodoro-btn-bg: #ffffff;
+  --feature-pomodoro-btn-text: #000000;
+  --feature-avatar-border: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="light"] {
+  --feature-card-bg: #ffffff;
+  --feature-card-border: rgba(0, 0, 0, 0.09);
+  --feature-card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+  --feature-title-color: #111827;
+  --feature-text-color: #111827;
+  --feature-muted-color: #64748b;
+  --feature-accent: #7c3aed;
+  --feature-subtle-bg: rgba(0, 0, 0, 0.04);
+  --feature-border-subtle: rgba(0, 0, 0, 0.06);
+  --feature-capsule-bg: rgba(0, 0, 0, 0.05);
+  --feature-capsule-border: rgba(0, 0, 0, 0.08);
+  --feature-tab-active-bg: #ffffff;
+  --feature-tab-active-color: #111827;
+  --feature-tab-inactive-color: var(--feature-accent, #7c3aed);
+  --feature-btn-bg: #111827;
+  --feature-btn-text: #ffffff;
+  --feature-reject-bg: rgba(0, 0, 0, 0.03);
+  --feature-reject-border: rgba(0, 0, 0, 0.1);
+  --feature-reject-color: #64748b;
+  --feature-skeleton-bg: rgba(0, 0, 0, 0.08);
+  --feature-badge-date-bg: rgba(99, 102, 241, 0.1);
+  --feature-badge-date-color: #6366f1;
+  --feature-pomodoro-capsule-bg: rgba(0, 0, 0, 0.03);
+  --feature-pomodoro-capsule-border: rgba(0, 0, 0, 0.12);
+  --feature-pomodoro-btn-bg: #111827;
+  --feature-pomodoro-btn-text: #ffffff;
+  --feature-avatar-border: rgba(0, 0, 0, 0.1);
+}
+
+#features {
+  padding: 5rem 1.5rem 6rem;
+  max-width: 1060px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: auto;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.features-header {
+  display: none;
+}
+
+/* 24-Column Bento Grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.bento-card {
+  background: var(--feature-card-bg);
+  border: 1px solid var(--feature-card-border);
+  box-shadow: var(--feature-card-shadow);
+  border-radius: 20px;
+  padding: 1.75rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Signature Accent Text (Dynamic with Themes) */
+.purple-text {
+  color: var(--feature-accent);
+  transition: color 0.3s ease;
+}
+
+.card-title {
+  color: var(--feature-title-color);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.5rem 0;
+  transition: color 0.3s ease;
+}
+
+/* =========================================================
+   1. Card 1: Every task has its place. (Top Left)
+   ========================================================= */
+.card-primary {
+  grid-column: 1 / 15;
+  grid-row: 1;
+}
+
+.task-rows {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+.task-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--feature-border-subtle);
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.3s ease;
+}
+
+.task-row:last-child {
+  border-bottom: none;
+}
+
+.task-row-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.task-checkbox {
+  width: 17px;
+  height: 17px;
+  min-width: 17px;
+  min-height: 17px;
+  border-radius: 4px;
+  border: 1.5px solid var(--feature-border, rgba(255, 255, 255, 0.3));
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="light"] .task-checkbox {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.task-row:hover .task-checkbox:not(.checked) {
+  border-color: var(--feature-accent, #a855f7);
+}
+
+.task-checkbox .check-icon {
+  width: 11px;
+  height: 11px;
+  stroke: #ffffff;
+  stroke-width: 3.5;
+  opacity: 0;
+  transform: scale(0.4);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Fills up when checked (Theme Responsive) */
+.task-checkbox.checked,
+.task-row.checked .task-checkbox {
+  background: var(--feature-accent, #9f75ff);
+  border-color: var(--feature-accent, #9f75ff);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--feature-accent, #9f75ff) 40%, transparent);
+}
+
+.task-checkbox.checked .check-icon,
+.task-row.checked .task-checkbox .check-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.task-title {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--feature-text-color);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease;
+}
+
+.task-title.strike {
+  text-decoration: line-through;
+  color: var(--feature-muted-color);
+  opacity: 0.7;
+}
+
+.task-row-right {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.badge {
+  font-size: 0.72rem;
+  border-radius: 5px;
+  padding: 0.2rem 0.55rem;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.badge-p1 {
+  background: rgba(239, 68, 68, 0.18);
+  color: #ef4444;
+  font-weight: 700;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.45rem;
+}
+
+.badge-p2 {
+  background: rgba(245, 158, 11, 0.18);
+  color: #d97706;
+  font-weight: 700;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.45rem;
+}
+
+.badge-subtle {
+  background: var(--feature-subtle-bg);
+  color: var(--feature-muted-color);
+}
+
+.badge-date {
+  background: var(--feature-badge-date-bg);
+  color: var(--feature-badge-date-color);
+}
+
+/* =========================================================
+   2. Card 2: See work your way. (Tall Right Card)
+   ========================================================= */
+.card-views {
+  grid-column: 15 / 25;
+  grid-row: 1 / span 2;
+}
+
+.views-capsule-switcher {
+  background: var(--feature-capsule-bg);
+  border: 1px solid var(--feature-capsule-border);
+  border-radius: 999px;
+  padding: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  width: fit-content;
+  margin-bottom: 1.5rem;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.views-pill-btn {
+  background: transparent;
+  border: none;
+  padding: 0.35rem 1.15rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--feature-tab-inactive-color);
+  transition: all 0.2s ease;
+}
+
+.views-pill-btn.active {
+  background: var(--feature-tab-active-bg);
+  color: var(--feature-tab-active-color);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.perspective-group {
+  margin-bottom: 0.5rem;
+}
+
+.perspective-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.group-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--feature-text-color);
+  transition: color 0.3s ease;
+}
+
+.group-date {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--feature-badge-date-color);
+  transition: color 0.3s ease;
+}
+
+.skeleton-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skeleton-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.skeleton-bar {
+  height: 5px;
+  background: var(--feature-skeleton-bg);
+  border-radius: 999px;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+/* =========================================================
+   Kanban Board View (Card 2)
+   ========================================================= */
+.perspectives-kanban-view {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+  width: 100%;
+  animation: kanbanFadeIn 0.28s ease;
+  box-sizing: border-box;
+}
+
+@keyframes kanbanFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.kanban-col {
+  background: var(--feature-subtle-bg);
+  border: 1px solid var(--feature-border-subtle);
+  border-radius: 12px;
+  padding: 0.75rem 0.55rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .kanban-col {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+.kanban-col-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+  padding: 0 0.15rem;
+}
+
+.kanban-col-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--feature-muted-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.kanban-col-count {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  background: var(--feature-subtle-bg);
+  color: var(--feature-muted-color);
+  line-height: 1.2;
+}
+
+.kanban-col-count.active {
+  background: color-mix(in srgb, var(--feature-accent, #9f75ff) 18%, transparent);
+  color: var(--feature-accent, #9f75ff);
+}
+
+.kanban-col-count.done {
+  background: rgba(16, 185, 129, 0.16);
+  color: #10b981;
+}
+
+.kanban-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.kanban-card {
+  background: var(--feature-card-bg);
+  border: 1px solid var(--feature-border-subtle);
+  border-radius: 9px;
+  padding: 0.6rem 0.55rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+}
+
+[data-theme="light"] .kanban-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.kanban-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--feature-accent, #9f75ff);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .kanban-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.kanban-card.card-accent-border {
+  border-color: color-mix(in srgb, var(--feature-accent, #9f75ff) 40%, transparent);
+}
+
+.kanban-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.kanban-card-title {
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--feature-text-color);
+  margin: 0;
+  letter-spacing: -0.01em;
+  word-break: break-word;
+  transition: color 0.3s ease;
+}
+
+.kanban-card.done-card .kanban-card-title {
+  text-decoration: line-through;
+  color: var(--feature-muted-color);
+  opacity: 0.75;
+}
+
+.kanban-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.15rem;
+}
+
+.kanban-date {
+  font-size: 0.68rem;
+  color: var(--feature-muted-color);
+  font-weight: 500;
+}
+
+.kanban-avatar {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--feature-avatar-border);
+  flex-shrink: 0;
+}
+
+.badge-theme-accent {
+  background: color-mix(in srgb, var(--feature-accent, #9f75ff) 20%, transparent);
+  color: var(--feature-accent, #9f75ff);
+  font-weight: 700;
+  font-size: 0.68rem;
+  padding: 0.12rem 0.4rem;
+}
+
+.badge-done {
+  background: rgba(16, 185, 129, 0.16);
+  color: #10b981;
+  font-weight: 700;
+  font-size: 0.68rem;
+  padding: 0.12rem 0.4rem;
+}
+.card-teams {
+  grid-column: 1 / 6;
+  grid-row: 2;
+}
+
+.card-teams .card-title {
+  font-size: 1.15rem;
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+}
+
+.team-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.team-member-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.team-member-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.member-avatar-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1.5px solid var(--feature-avatar-border);
+  display: block;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  transition: border-color 0.3s ease;
+}
+
+.member-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.member-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--feature-text-color);
+  transition: color 0.3s ease;
+}
+
+.member-sub {
+  font-size: 0.72rem;
+  color: var(--feature-muted-color);
+  transition: color 0.3s ease;
+}
+
+.badge-access {
+  background: var(--feature-subtle-bg);
+  border: 1px solid var(--feature-card-border);
+  color: var(--feature-text-color);
+  font-size: 0.72rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.badge-access.restricted {
+  color: var(--feature-muted-color);
+}
+
+/* =========================================================
+   4. Card 4: Deadlines are conversations. (Bottom Left 2)
+   ========================================================= */
+.card-deadlines {
+  grid-column: 6 / 15;
+  grid-row: 2;
+  overflow: hidden;
+}
+
+.card-deadlines .card-title {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+}
+
+.deadline-negotiate-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+.deadline-row-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.deadline-shift-display {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.date-stack {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.date-old {
+  color: var(--feature-muted-color);
+  text-decoration: line-through;
+}
+
+.shift-arrow {
+  color: var(--feature-badge-date-color);
+  font-size: 1.1rem;
+}
+
+.date-new {
+  color: var(--feature-badge-date-color);
+}
+
+/* iOS Switch Toggle (Theme Responsive) */
+.ios-switch-toggle {
+  position: relative;
+  width: 44px;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  border: 1px solid var(--feature-border-subtle, rgba(255, 255, 255, 0.12));
+  padding: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+[data-theme="light"] .ios-switch-toggle {
+  background: rgba(0, 0, 0, 0.14);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Active state dynamically inherits current theme accent color */
+.ios-switch-toggle.active {
+  background: var(--feature-accent, #10b981);
+  border-color: var(--feature-accent, #10b981);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--feature-accent, #10b981) 45%, transparent);
+}
+
+.ios-switch-thumb {
+  position: absolute;
+  top: 1.5px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.32), 0 1px 2px rgba(0, 0, 0, 0.18);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
+
+.ios-switch-toggle.active .ios-switch-thumb {
+  transform: translateX(18px);
+}
+
+.deadline-quote {
+  font-size: 0.82rem;
+  color: var(--feature-muted-color);
+  margin-top: 1rem;
+  line-height: 1.4;
+  margin-bottom: 0;
+  transition: color 0.3s ease;
+}
+
+/* =========================================================
+   5. Card 5: Make time for what matters. (Bottom Centered)
+   ========================================================= */
+.card-focus {
+  grid-column: 1 / 25;
+  grid-row: 3;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 1rem 1rem 1rem;
+}
+
+.card-focus:hover {
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.focus-heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+  color: var(--feature-title-color);
+}
+
+.capsule-heading {
+  border: 1.5px solid var(--feature-card-border);
+  border-radius: 999px;
+  padding: 0.15rem 1.1rem;
+  color: var(--feature-title-color);
+  display: inline-block;
+  font-weight: 700;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.mock-focus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.pomodoro-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.pomodoro-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--feature-title-color);
+  transition: color 0.3s ease;
+}
+
+.pomodoro-badge {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  background: var(--feature-subtle-bg);
+  color: var(--feature-accent);
+  font-weight: 700;
+  border: 1px solid var(--feature-card-border);
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.pomodoro-capsule {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.45rem 0.55rem 0.45rem 1.4rem;
+  background: var(--feature-pomodoro-capsule-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid var(--feature-pomodoro-capsule-border);
+  border-radius: 9999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 100%;
+}
+
+.pomodoro-capsule:hover {
+  border-color: var(--feature-accent);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.pomodoro-capsule.is-running {
+  border-color: var(--feature-accent);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.pomodoro-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--feature-title-color);
+  opacity: 0.9;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.pomodoro-capsule.is-running .pomodoro-icon {
+  animation: pomodoro-pulse 2s infinite ease-in-out;
+}
+
+@keyframes pomodoro-pulse {
+  0%, 100% { opacity: 0.9; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+.pomodoro-time {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  color: var(--feature-title-color);
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, monospace;
+  user-select: none;
+  min-width: 140px;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.pomodoro-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: var(--feature-pomodoro-btn-bg);
+  color: var(--feature-pomodoro-btn-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease, background 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.pomodoro-btn:hover {
+  transform: scale(1.06);
+  opacity: 0.95;
+}
+
+.pomodoro-btn:active {
+  transform: scale(0.95);
+}
+
+.pomodoro-btn svg {
+  display: block;
+  fill: currentColor;
+  color: currentColor;
+}
+
+/* =========================================================
+   Responsive Breakpoints
+   ========================================================= */
+@media (max-width: 900px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .card-primary,
+  .card-views,
+  .card-teams,
+  .card-deadlines,
+  .card-focus {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+  }
+  .focus-heading {
+    font-size: 1.75rem;
+  }
+}
