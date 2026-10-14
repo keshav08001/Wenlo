@@ -3,7 +3,11 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-  
+
+
+
+
+    
       {/* floating pill navbar -- looks cool */}
       <div className="nav-wrapper">
         <nav className="pill-nav" aria-label="Main-nav">

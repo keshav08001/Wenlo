@@ -171,8 +171,21 @@ function slapThemeOnDom(themeKey, isDark) {
     root.style.setProperty('--magic-gradient-start', theme.primary);
     root.style.setProperty('--magic-gradient-end', theme.accent);
 
-    // Feature section theme variables
-    root.style.setProperty('--feature-accent', themeKey === 'charcoal' ? '#9f75ff' : (theme.accent || '#9f75ff'));
+    // Feature section theme accent colors (vibrant and high contrast for dark & light)
+    const themeAccents = {
+      lavender: { dark: '#A78BFA', light: '#7C3AED' },
+      amber:    { dark: '#F59E0B', light: '#D97706' },
+      sage:     { dark: '#6E9877', light: '#3F6212' },
+      ocean:    { dark: '#3B82F6', light: '#2563EB' },
+      charcoal: { dark: '#94A3B8', light: '#475569' },
+      red:      { dark: '#EF4444', light: '#B91C1C' }
+    };
+    const activeAccent = (themeAccents[themeKey] && themeAccents[themeKey].dark) || theme.accent || '#A78BFA';
+
+    root.style.setProperty('--feature-accent', activeAccent);
+    root.style.setProperty('--feature-badge-date-color', activeAccent);
+    root.style.setProperty('--feature-badge-date-bg', `color-mix(in srgb, ${activeAccent} 15%, transparent)`);
+    root.style.setProperty('--feature-tab-inactive-color', activeAccent);
     root.style.setProperty('--feature-card-bg', '#111216');
     root.style.setProperty('--feature-card-border', 'rgba(255, 255, 255, 0.08)');
     root.style.setProperty('--feature-title-color', '#ffffff');
@@ -180,6 +193,7 @@ function slapThemeOnDom(themeKey, isDark) {
     root.style.setProperty('--feature-muted-color', '#94a3b8');
   } else {
     root.setAttribute('data-theme', 'light');
+
 
     // Light Mode: Background is secondary (light), text is primary (dark)
     root.style.setProperty('--bg', theme.secondary);
@@ -194,70 +208,107 @@ function slapThemeOnDom(themeKey, isDark) {
     root.style.setProperty('--magic-gradient-end', theme.accent);
 
     // Feature section theme variables for light mode
-    root.style.setProperty('--feature-accent', themeKey === 'charcoal' ? '#7c3aed' : (theme.primary || '#7c3aed'));
+    const themeAccents = {
+      lavender: { dark: '#A78BFA', light: '#7C3AED' },
+      amber:    { dark: '#F59E0B', light: '#D97706' },
+      sage:     { dark: '#6E9877', light: '#3F6212' },
+      ocean:    { dark: '#3B82F6', light: '#2563EB' },
+      charcoal: { dark: '#94A3B8', light: '#475569' },
+      red:      { dark: '#EF4444', light: '#B91C1C' }
+    };
+    const activeAccent = (themeAccents[themeKey] && themeAccents[themeKey].light) || theme.accent || '#7C3AED';
+
+    root.style.setProperty('--feature-accent', activeAccent);
+    root.style.setProperty('--feature-badge-date-color', activeAccent);
+    root.style.setProperty('--feature-badge-date-bg', `color-mix(in srgb, ${activeAccent} 12%, transparent)`);
+    root.style.setProperty('--feature-tab-inactive-color', activeAccent);
     root.style.setProperty('--feature-card-bg', '#ffffff');
     root.style.setProperty('--feature-card-border', 'rgba(0, 0, 0, 0.08)');
-    root.style.setProperty('--feature-title-color', theme.primary || '#111827');
-    root.style.setProperty('--feature-text-color', theme.primary || '#111827');
+    root.style.setProperty('--feature-title-color', '#111827');
+    root.style.setProperty('--feature-text-color', '#111827');
     root.style.setProperty('--feature-muted-color', '#64748b');
   }
-  
+
+  // Determine active accent for DOM element styling
+  const themeAccentsMap = {
+    lavender: { dark: '#A78BFA', light: '#7C3AED' },
+    amber:    { dark: '#F59E0B', light: '#D97706' },
+    sage:     { dark: '#6E9877', light: '#3F6212' },
+    ocean:    { dark: '#3B82F6', light: '#2563EB' },
+    charcoal: { dark: '#94A3B8', light: '#475569' },
+    red:      { dark: '#EF4444', light: '#B91C1C' }
+  };
+  const currentAccent = (themeAccentsMap[themeKey] && (isDark ? themeAccentsMap[themeKey].dark : themeAccentsMap[themeKey].light)) || theme.accent || '#7C3AED';
+
+  // Apply accent directly to #features and #roadmap sections scope
+  const featuresSection = document.getElementById('features');
+  if (featuresSection) {
+    featuresSection.style.setProperty('--feature-accent', currentAccent);
+  }
+  const roadmapSection = document.getElementById('roadmap');
+  if (roadmapSection) {
+    roadmapSection.style.setProperty('--feature-accent', currentAccent);
+  }
+
+  // Update all 5 signature card headings ("Every task", "See work", "The right people.", "Deadlines", "Make time for")
 
 
+  document.querySelectorAll('.purple-text').forEach(el => {
+    el.style.color = currentAccent;
+  });
+
+  // Update deadline switch if active
+  const deadlineSwitch = document.getElementById('deadline-switch');
+  if (deadlineSwitch) {
+    if (deadlineSwitch.classList.contains('active')) {
+      deadlineSwitch.style.backgroundColor = currentAccent;
+      deadlineSwitch.style.borderColor = currentAccent;
+    } else {
+      deadlineSwitch.style.backgroundColor = '';
+      deadlineSwitch.style.borderColor = '';
+    }
+  }
+
+  // Update checked checkboxes
+  document.querySelectorAll('.task-checkbox.checked, .task-row.checked .task-checkbox').forEach(cb => {
+    cb.style.backgroundColor = currentAccent;
+    cb.style.borderColor = currentAccent;
+  });
+
+  // Update theme accent badges, dates, arrows, and pomodoro badge
+
+  document.querySelectorAll('.badge-theme-accent, .date-new, .shift-arrow, .pomodoro-badge').forEach(el => {
+    el.style.color = currentAccent;
+  });
 
   // Update the toggle buttons UI so the user knows they clicked something
-
   const darkBtn = document.getElementById('btn-dark-mode');
-
-
   const lightBtn = document.getElementById('btn-light-mode');
-  
 
-
-  if (isDark) {
-    darkBtn.classList.add('active');
-
-    darkBtn.classList.remove('inactive');
-    lightBtn.classList.add('inactive');
-
-    lightBtn.classList.remove('active');
-  } 
-
-
-
-
-  else {
-    lightBtn.classList.add('active');
-
-    lightBtn.classList.remove('inactive');
-    darkBtn.classList.add('inactive');
-
-    darkBtn.classList.remove('active');
+  if (darkBtn && lightBtn) {
+    if (isDark) {
+      darkBtn.classList.add('active');
+      darkBtn.classList.remove('inactive');
+      lightBtn.classList.add('inactive');
+      lightBtn.classList.remove('active');
+    } else {
+      lightBtn.classList.add('active');
+      lightBtn.classList.remove('inactive');
+      darkBtn.classList.add('inactive');
+      darkBtn.classList.remove('active');
+    }
   }
 
   // Update theme selectors
 
-  
   document.querySelectorAll('.theme-picker-btn').forEach(btn => {
-    
-    
-    
-
-    
-    if (btn.dataset.theme === themeKey) {
+    const btnTheme = btn.getAttribute('data-theme') || btn.dataset.theme;
+    if (btnTheme === themeKey) {
       btn.classList.add('selected-theme');
-    } 
-    
-    
-    else {
+    } else {
       btn.classList.remove('selected-theme');
     }
   });
-
-
-//oke
-
-
 
   console.log(`Theme switched to ${theme.name}. Vibe check: ${theme.vibe}`);
 }
@@ -300,7 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
+                                                           
 
 
 
@@ -316,12 +367,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Bind the theme picker dots
   document.querySelectorAll('.theme-picker-btn').forEach(btn => {
-
-    btn.addEventListener('click', (e) => {
-
-      const selectedTheme = e.target.dataset.theme;
-
-      slapThemeOnDom(selectedTheme, isLivingInTheDark);
+    btn.addEventListener('click', () => {
+      const selectedTheme = btn.getAttribute('data-theme') || btn.dataset.theme;
+      if (selectedTheme) {
+        slapThemeOnDom(selectedTheme, isLivingInTheDark);
+      }
     });
   });
   
@@ -337,6 +387,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // Slap the initial theme on load
+
+
   const savedVibe = localStorage.getItem('wenlo-theme-vibe') || 'charcoal';
   const savedMode = localStorage.getItem('wenlo-theme-mode');
   const initialDark = savedMode ? savedMode === 'dark' : true;
@@ -361,6 +413,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // Click to scroll to next section
+
+
     scrollHint.addEventListener('click', () => {
       const windowHeight = window.innerHeight;
       
@@ -388,6 +442,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // Hide scroll hint when footer is reached ------- this shi imp
+
     const footer = document.getElementById('site-footer');
     if (footer) {
       window.addEventListener('scroll', () => {

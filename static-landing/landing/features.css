@@ -1,6 +1,5 @@
-/* =========================================================
-   Wenlo Features Section - Theme & Mode Responsive
-   ========================================================= */
+/* sir said in class that css shoud be written with --  */
+
 
 :root {
   --feature-card-bg: #111216;
@@ -9,28 +8,59 @@
   --feature-title-color: #ffffff;
   --feature-text-color: #ffffff;
   --feature-muted-color: #94a3b8;
-  --feature-accent: #9f75ff;
+
+
+
+  --feature-accent: #a78bfa;
   --feature-subtle-bg: rgba(255, 255, 255, 0.05);
   --feature-border-subtle: rgba(255, 255, 255, 0.04);
   --feature-capsule-bg: rgba(0, 0, 0, 0.5);
   --feature-capsule-border: rgba(255, 255, 255, 0.08);
+
   --feature-tab-active-bg: rgba(255, 255, 255, 0.1);
   --feature-tab-active-color: #ffffff;
-  --feature-tab-inactive-color: var(--feature-accent, #9f75ff);
+  --feature-tab-inactive-color: var(--feature-accent);
   --feature-btn-bg: #ffffff;
   --feature-btn-text: #000000;
   --feature-reject-bg: rgba(255, 255, 255, 0.04);
+
+
+
+
   --feature-reject-border: rgba(255, 255, 255, 0.08);
   --feature-reject-color: #9ca3af;
   --feature-skeleton-bg: rgba(255, 255, 255, 0.08);
-  --feature-badge-date-bg: rgba(99, 102, 241, 0.12);
-  --feature-badge-date-color: #818cf8;
-  --feature-pomodoro-capsule-bg: rgba(255, 255, 255, 0.04);
+  --feature-badge-date-bg: color-mix(in srgb, var(--feature-accent) 15%, transparent);
+  --feature-badge-date-color: var(--feature-accent);
+  --feature-pomodoro-capsule-bg: #14161a;
   --feature-pomodoro-capsule-border: rgba(255, 255, 255, 0.12);
+
+
+
   --feature-pomodoro-btn-bg: #ffffff;
-  --feature-pomodoro-btn-text: #000000;
+  --feature-pomodoro-btn-text: #0d1117;
   --feature-avatar-border: rgba(255, 255, 255, 0.15);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 [data-theme="light"] {
   --feature-card-bg: #ffffff;
@@ -39,28 +69,42 @@
   --feature-title-color: #111827;
   --feature-text-color: #111827;
   --feature-muted-color: #64748b;
-  --feature-accent: #7c3aed;
+
+
+
   --feature-subtle-bg: rgba(0, 0, 0, 0.04);
   --feature-border-subtle: rgba(0, 0, 0, 0.06);
   --feature-capsule-bg: rgba(0, 0, 0, 0.05);
   --feature-capsule-border: rgba(0, 0, 0, 0.08);
   --feature-tab-active-bg: #ffffff;
   --feature-tab-active-color: #111827;
-  --feature-tab-inactive-color: var(--feature-accent, #7c3aed);
+  --feature-tab-inactive-color: var(--feature-accent);
+
+
   --feature-btn-bg: #111827;
   --feature-btn-text: #ffffff;
   --feature-reject-bg: rgba(0, 0, 0, 0.03);
   --feature-reject-border: rgba(0, 0, 0, 0.1);
   --feature-reject-color: #64748b;
   --feature-skeleton-bg: rgba(0, 0, 0, 0.08);
-  --feature-badge-date-bg: rgba(99, 102, 241, 0.1);
-  --feature-badge-date-color: #6366f1;
+
+
+
+
+
+  --feature-badge-date-bg: color-mix(in srgb, var(--feature-accent) 12%, transparent);
+  --feature-badge-date-color: var(--feature-accent);
   --feature-pomodoro-capsule-bg: rgba(0, 0, 0, 0.03);
   --feature-pomodoro-capsule-border: rgba(0, 0, 0, 0.12);
   --feature-pomodoro-btn-bg: #111827;
   --feature-pomodoro-btn-text: #ffffff;
+
+
   --feature-avatar-border: rgba(0, 0, 0, 0.1);
 }
+
+
+
 
 #features {
   padding: 5rem 1.5rem 6rem;
@@ -77,13 +121,26 @@
   display: none;
 }
 
-/* 24-Column Bento Grid */
+
+
+
+
+
+
+
+
+
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(24, 1fr);
   gap: 1.25rem;
   width: 100%;
 }
+
+
+
+
+
 
 .bento-card {
   background: var(--feature-card-bg);
@@ -99,9 +156,14 @@
   transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Signature Accent Text (Dynamic with Themes) */
+
+
+
+
+
+
 .purple-text {
-  color: var(--feature-accent);
+  color: var(--feature-accent) !important;
   transition: color 0.3s ease;
 }
 
@@ -115,9 +177,7 @@
   transition: color 0.3s ease;
 }
 
-/* =========================================================
-   1. Card 1: Every task has its place. (Top Left)
-   ========================================================= */
+/* c1 */
 .card-primary {
   grid-column: 1 / 15;
   grid-row: 1;
@@ -173,7 +233,7 @@
 }
 
 .task-row:hover .task-checkbox:not(.checked) {
-  border-color: var(--feature-accent, #a855f7);
+  border-color: var(--feature-accent);
 }
 
 .task-checkbox .check-icon {
@@ -186,12 +246,21 @@
   transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Fills up when checked (Theme Responsive) */
+
+
+
+
+
+
+
+
+/* Fills up when checked  */
+/* (Theme Responsive) */
 .task-checkbox.checked,
 .task-row.checked .task-checkbox {
-  background: var(--feature-accent, #9f75ff);
-  border-color: var(--feature-accent, #9f75ff);
-  box-shadow: 0 0 10px color-mix(in srgb, var(--feature-accent, #9f75ff) 40%, transparent);
+  background: var(--feature-accent);
+  border-color: var(--feature-accent);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--feature-accent) 40%, transparent);
 }
 
 .task-checkbox.checked .check-icon,
@@ -235,8 +304,8 @@
 }
 
 .badge-p1 {
-  background: rgba(239, 68, 68, 0.18);
-  color: #ef4444;
+  background: rgba(220, 38, 38, 0.13);
+  color: #dc2626;
   font-weight: 700;
   font-size: 0.7rem;
   padding: 0.15rem 0.45rem;
@@ -260,9 +329,15 @@
   color: var(--feature-badge-date-color);
 }
 
-/* =========================================================
-   2. Card 2: See work your way. (Tall Right Card)
-   ========================================================= */
+
+
+
+
+
+
+
+
+/* c2 */
 .card-views {
   grid-column: 15 / 25;
   grid-row: 1 / span 2;
@@ -344,9 +419,27 @@
   transition: background 0.3s ease;
 }
 
-/* =========================================================
-   Kanban Board View (Card 2)
-   ========================================================= */
+
+
+
+
+
+.task-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+  background: var(--feature-accent);
+}
+
+.dot-red,
+.dot-orange,
+.dot-green,
+.dot-blue,
+.dot-purple { background: var(--feature-accent); }
+
+/* kanban view  */
 .perspectives-kanban-view {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -361,6 +454,7 @@
     opacity: 0;
     transform: translateY(6px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -413,13 +507,13 @@
 }
 
 .kanban-col-count.active {
-  background: color-mix(in srgb, var(--feature-accent, #9f75ff) 18%, transparent);
-  color: var(--feature-accent, #9f75ff);
+  background: color-mix(in srgb, var(--feature-accent) 18%, transparent);
+  color: var(--feature-accent);
 }
 
 .kanban-col-count.done {
-  background: rgba(16, 185, 129, 0.16);
-  color: #10b981;
+  background: rgba(5, 150, 105, 0.14);
+  color: #059669;
 }
 
 .kanban-cards {
@@ -449,7 +543,7 @@
 
 .kanban-card:hover {
   transform: translateY(-2px);
-  border-color: var(--feature-accent, #9f75ff);
+  border-color: var(--feature-accent);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -458,7 +552,7 @@
 }
 
 .kanban-card.card-accent-border {
-  border-color: color-mix(in srgb, var(--feature-accent, #9f75ff) 40%, transparent);
+  border-color: color-mix(in srgb, var(--feature-accent) 40%, transparent);
 }
 
 .kanban-card-top {
@@ -507,27 +601,28 @@
 }
 
 .badge-theme-accent {
-  background: color-mix(in srgb, var(--feature-accent, #9f75ff) 20%, transparent);
-  color: var(--feature-accent, #9f75ff);
+  background: color-mix(in srgb, var(--feature-accent) 20%, transparent);
+  color: var(--feature-accent);
   font-weight: 700;
   font-size: 0.68rem;
   padding: 0.12rem 0.4rem;
 }
 
 .badge-done {
-  background: rgba(16, 185, 129, 0.16);
-  color: #10b981;
+  background: rgba(5, 150, 105, 0.14);
+  color: #059669;
   font-weight: 700;
   font-size: 0.68rem;
   padding: 0.12rem 0.4rem;
 }
+
 .card-teams {
-  grid-column: 1 / 6;
+  grid-column: 1 / 8;
   grid-row: 2;
 }
 
 .card-teams .card-title {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   line-height: 1.25;
   margin-bottom: 1.25rem;
 }
@@ -535,7 +630,7 @@
 .team-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.9rem;
   margin-top: auto;
 }
 
@@ -543,17 +638,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.75rem;
 }
 
 .team-member-left {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.7rem;
+  min-width: 0;
 }
 
 .member-avatar-img {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
@@ -566,13 +663,15 @@
 .member-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.15;
+  line-height: 1.2;
+  min-width: 0;
 }
 
 .member-name {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--feature-text-color);
+  letter-spacing: -0.01em;
   transition: color 0.3s ease;
 }
 
@@ -587,20 +686,41 @@
   border: 1px solid var(--feature-card-border);
   color: var(--feature-text-color);
   font-size: 0.72rem;
-  padding: 0.25rem 0.65rem;
-  border-radius: 6px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
   transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="light"] .badge-access {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.08);
+  color: #111827;
 }
 
 .badge-access.restricted {
   color: var(--feature-muted-color);
+  background: transparent;
+  border-color: var(--feature-border-subtle);
 }
 
-/* =========================================================
-   4. Card 4: Deadlines are conversations. (Bottom Left 2)
-   ========================================================= */
+[data-theme="light"] .badge-access.restricted {
+  color: #64748b;
+  background: transparent;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+/* c4 */
 .card-deadlines {
-  grid-column: 6 / 15;
+  grid-column: 8 / 15;
   grid-row: 2;
   overflow: hidden;
 }
@@ -657,6 +777,15 @@
   color: var(--feature-badge-date-color);
 }
 
+
+
+
+
+
+
+
+
+
 /* iOS Switch Toggle (Theme Responsive) */
 .ios-switch-toggle {
   position: relative;
@@ -672,20 +801,20 @@
   outline: none;
   box-sizing: border-box;
   transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-              border-color 0.3s ease,
-              box-shadow 0.3s ease;
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
   flex-shrink: 0;
 }
 
 [data-theme="light"] .ios-switch-toggle {
-  background: rgba(0, 0, 0, 0.14);
-  border-color: rgba(0, 0, 0, 0.1);
+  background: #e2e8f0;
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
 /* Active state dynamically inherits current theme accent color */
 .ios-switch-toggle.active {
-  background: var(--feature-accent, #10b981);
-  border-color: var(--feature-accent, #10b981);
+  background: var(--feature-accent, #10b981) !important;
+  border-color: var(--feature-accent, #10b981) !important;
   box-shadow: 0 0 12px color-mix(in srgb, var(--feature-accent, #10b981) 45%, transparent);
 }
 
@@ -715,9 +844,15 @@
   transition: color 0.3s ease;
 }
 
-/* =========================================================
-   5. Card 5: Make time for what matters. (Bottom Centered)
-   ========================================================= */
+
+
+
+
+
+
+
+
+/* c5 */
 .card-focus {
   grid-column: 1 / 25;
   grid-row: 3;
@@ -736,15 +871,14 @@
 }
 
 .focus-heading {
-  font-size: 2.2rem;
+  font-family: var(--font, 'Manrope', sans-serif);
+  font-size: 2.25rem;
   font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  margin-bottom: 1.75rem;
-  flex-wrap: wrap;
+  letter-spacing: -0.02em;
   color: var(--feature-title-color);
+  margin-bottom: 1.75rem;
+  text-align: center;
+  line-height: 1.25;
 }
 
 .capsule-heading {
@@ -762,58 +896,71 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.25rem;
+  gap: 1.4rem;
 }
 
 .pomodoro-header {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  justify-content: center;
+  gap: 0.75rem;
 }
 
 .pomodoro-title {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--feature-title-color);
+  letter-spacing: -0.01em;
   transition: color 0.3s ease;
 }
 
 .pomodoro-badge {
   font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.18rem 0.55rem;
+  letter-spacing: 0.06em;
+  padding: 0.22rem 0.65rem;
   border-radius: 999px;
-  background: var(--feature-subtle-bg);
-  color: var(--feature-accent);
+  background: rgba(255, 255, 255, 0.08);
+  color: #8b949e;
   font-weight: 700;
-  border: 1px solid var(--feature-card-border);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  line-height: 1.2;
   transition: color 0.3s ease, background 0.3s ease;
+}
+
+[data-theme="light"] .pomodoro-badge {
+  background: rgba(0, 0, 0, 0.06);
+  color: #64748b;
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
 .pomodoro-capsule {
   display: inline-flex;
   align-items: center;
-  gap: 1.25rem;
-  padding: 0.45rem 0.55rem 0.45rem 1.4rem;
+  gap: 1.4rem;
+  padding: 0.5rem 0.65rem 0.5rem 1.6rem;
   background: var(--feature-pomodoro-capsule-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1.5px solid var(--feature-pomodoro-capsule-border);
   border-radius: 9999px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   max-width: 100%;
 }
 
 .pomodoro-capsule:hover {
-  border-color: var(--feature-accent);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="light"] .pomodoro-capsule:hover {
+  border-color: rgba(0, 0, 0, 0.25);
 }
 
 .pomodoro-capsule.is-running {
-  border-color: var(--feature-accent);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.4);
 }
 
 .pomodoro-icon {
@@ -821,7 +968,7 @@
   align-items: center;
   justify-content: center;
   color: var(--feature-title-color);
-  opacity: 0.9;
+  opacity: 0.95;
   flex-shrink: 0;
   transition: color 0.3s ease;
 }
@@ -831,14 +978,28 @@
 }
 
 @keyframes pomodoro-pulse {
-  0%, 100% { opacity: 0.9; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.1); }
+
+  0%,
+  100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
 }
 
+
+
+
+
+
 .pomodoro-time {
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   font-variant-numeric: tabular-nums;
   color: var(--feature-title-color);
   font-family: 'Manrope', -apple-system, BlinkMacSystemFont, monospace;
@@ -849,8 +1010,8 @@
 }
 
 .pomodoro-btn {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: none;
   background: var(--feature-pomodoro-btn-bg);
@@ -860,7 +1021,7 @@
   justify-content: center;
   cursor: pointer;
   transition: transform 0.15s ease, opacity 0.15s ease, background 0.3s ease, color 0.3s ease;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   flex-shrink: 0;
 }
 
@@ -879,14 +1040,27 @@
   color: currentColor;
 }
 
-/* =========================================================
-   Responsive Breakpoints
-   ========================================================= */
+.pomodoro-btn .icon-play {
+  margin-left: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 900px) {
   .bento-grid {
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
+
   .card-primary,
   .card-views,
   .card-teams,
@@ -895,6 +1069,7 @@
     grid-column: 1 / -1 !important;
     grid-row: auto !important;
   }
+
   .focus-heading {
     font-size: 1.75rem;
   }

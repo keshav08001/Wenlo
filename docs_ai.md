@@ -56,14 +56,6 @@ Missing things to be added:
         picked svg designs out of an old project
 
 
-<!-- 
-26th sep - saturday:
-    AI usage:
-
-    Documentations used:
-        
-
- -->
 
 
                                                                                                                    
@@ -88,8 +80,9 @@ documentation: https://designerup.co/blog/i-studied-the-ux-ui-of-over-200-onboar
 
 alright so a lot of things to add 
  1) used claude help with the footer the back watermark 
+
  2) tried to use claude to make me a good themes page and user suggestion
-    lokkes sooo bad decided against it
+    lokes sooo bad decided against it
 
     https://jsontotable.org/html-to-tsx
 
@@ -98,5 +91,27 @@ alright so a lot of things to add
 tried using google stich worked meh
  then went on to use claude ui editor (opens in chat) - works a lot better but still would prefer stich in the future more refined and got a good result with it dureing the hackathon
 
+
+
+
+https://cssgridgenerator.io/
+
+https://designerup.co/blog/the-14-types-of-onboarding-ux-ui-used-by-top-apps-and-how-to-copy-them/
+
+
+roadmaps.sh
+
+https://uiverse.io/njesenberger/rude-stingray-22
+
+
+https://uiverse.io/mamyapro123/cuddly-warthog-66
+
+used ai for making a
+templates for bento card
+kanban view 
+(had no clue on how these 2 even worked)
+
+
+pomodoro timer tried to copy the pomodoro website 
 
 
