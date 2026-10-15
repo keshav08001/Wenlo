@@ -115,3 +115,11 @@ kanban view
 pomodoro timer tried to copy the pomodoro website 
 
 
+
+
+
+used ai to help understand the reason for routing and what structure i should have 
+
+
+
+used ai to make readme -- after internship was over
