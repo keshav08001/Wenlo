@@ -1,6 +1,6 @@
 # Wenlo Todos (`wenlo-todos`)
 
-> readme Made using AI
+> this readme Made using AI
 >
 > **A modern, collaborative, multi-tenant productivity and task execution suite.**  
 > Built with Turborepo, Next.js, React + Vite + TypeScript, Supabase, and Tailwind CSS with custom variable-driven themes.
